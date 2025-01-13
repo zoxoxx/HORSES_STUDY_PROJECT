@@ -1,0 +1,51 @@
+﻿<Window x:Class="HORSES.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HORSES"
+        mc:Ignorable="d"
+        Title="Конные состязания" Height="450" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="Конные состязания" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18"/>
+        <Image Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="C:\Users\altas\source\repos\HORSES\HORSES\Resources\Horses.jpg"/>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Name="BTN_START" Click="BTN_START_Click" Grid.Column="0" Content="Начать работу" Width="220"/>
+            <Button Name="BTN_INFORMATION" Click="BTN_INFORMATION_Click" Grid.Column="1" Content="Информация о работе с программой" Width="220"/>
+        </Grid>
+
+        <Button Grid.Row="4" x:Name="CloseButton" Width="100" Height="40" Content="Закрыть"
+        HorizontalAlignment="Center" VerticalAlignment="Center" 
+        Background="Red" Foreground="White" FontSize="16" FontWeight="Bold" Click="CloseButton_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="Red"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkRed"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="Crimson"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+</Window>
