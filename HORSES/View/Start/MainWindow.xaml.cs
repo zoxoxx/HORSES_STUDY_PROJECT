@@ -1,4 +1,5 @@
 ﻿using HORSES.View;
+using HORSES.View.Entrance;
 using System.Diagnostics;
 using System.Text;
 using System.Windows;
@@ -32,7 +33,9 @@ namespace HORSES
 
         private void BTN_START_Click(object sender, RoutedEventArgs e)
         {
-
+            Autorize autorize = new Autorize();
+            this.Hide();
+            autorize.Show();
         }
 
         private void BTN_INFORMATION_Click(object sender, RoutedEventArgs e)
