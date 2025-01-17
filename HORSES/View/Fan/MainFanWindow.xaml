@@ -1,0 +1,30 @@
+﻿<Window x:Class="HORSES.View.Fan.MainFanWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HORSES.View.Fan"
+        mc:Ignorable="d"
+        Title="Главное окно болельщика" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Background="AliceBlue" Margin="10" >
+        
+        <Border BorderBrush="DarkGray" BorderThickness="2" CornerRadius="15" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Image Source="C:\Users\altas\source\repos\HORSES\HORSES\Resources\FanIcon.png" Height="150" Margin="0,0,0,10" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+                <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button Content="Просмотреть информацию о состязаниях и заездах" Width="310" Height="40" Margin="5" Name="BTN_COMPETITION_INFO" Click="BTN_COMPETITION_INFO_Click" Background="#FF6699FF" Foreground="White" FontWeight="Bold"/>
+                    <Button Content="Просмотр информации об участниках заезда" Width="310" Height="40" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold"/>
+                    <Button Content="Просмотр результатов заезда" Width="310" Height="40" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold"/>
+                    <Button Content="Пожертвовать средства на содержание лошади" Width="310" Height="40" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold"/>
+                    <Button Content="Вернуться на главную форму" Width="310" Height="40" Margin="5" Name="BTN_BACK_MAIN" Click="BTN_BACK_MAIN_Click" Background="#FFD6D6D6" Foreground="Black" FontWeight="Bold"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
