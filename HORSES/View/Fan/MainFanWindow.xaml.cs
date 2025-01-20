@@ -33,7 +33,9 @@ namespace HORSES.View.Fan
 
         private void BTN_COMPETITION_INFO_Click(object sender, RoutedEventArgs e)
         {
-
+            CompetitionAndRacesWindow window = new CompetitionAndRacesWindow();
+            this.Close();
+            window.Show();
         }
     }
 }
