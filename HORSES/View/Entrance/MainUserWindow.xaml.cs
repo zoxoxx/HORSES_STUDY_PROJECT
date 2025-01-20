@@ -27,7 +27,7 @@ namespace HORSES.View.Entrance
             this.currentUser = currentUser;
         }
 
-        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        private async void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             if (currentUser.RoleId == 1)
                 MainFrame.Navigate(new MainPages.MainJudgePage());

@@ -45,7 +45,7 @@ namespace HORSES.View.Entrance
             window.Show();
         }
 
-        private void BTN_FAN_Click(object sender, RoutedEventArgs e)
+        private async void BTN_FAN_Click(object sender, RoutedEventArgs e)
         {
             MainFanWindow window = new MainFanWindow();
             this.Close();
