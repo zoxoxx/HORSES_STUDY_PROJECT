@@ -24,16 +24,18 @@ namespace HORSES.View.Fan
             InitializeComponent();
         }
 
-        private void BTN_BACK_MAIN_Click(object sender, RoutedEventArgs e)
+        private async void BTN_BACK_MAIN_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();
             this.Close();
             window.Show();
         }
 
-        private void BTN_COMPETITION_INFO_Click(object sender, RoutedEventArgs e)
+        private async void BTN_COMPETITION_INFO_Click(object sender, RoutedEventArgs e)
         {
-
+            CompetitionAndRacesWindow window = new CompetitionAndRacesWindow();
+            this.Close();
+            window.Show();
         }
     }
 }

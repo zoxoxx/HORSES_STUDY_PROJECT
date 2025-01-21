@@ -54,14 +54,14 @@
             <Canvas Grid.Row="1" Grid.Column="1">
                 <StackPanel Orientation="Horizontal">
                     <Label Name="LBL_LOGIN" Content="Логин" VerticalAlignment="Center" Margin="4 0 0 0" Width="60"/>
-                    <TextBox Grid.Row="1" Name="TB_LOGIN" Height="25" Width="150" VerticalAlignment="Center" Tag="Введите логин..."/>
+                    <TextBox Grid.Row="1" Name="TB_LOGIN" Height="25" Width="150" Margin="4 10 0 0" VerticalAlignment="Center" Tag=""/>
                 </StackPanel>
             </Canvas>
 
             <Canvas Grid.Row="2" Grid.Column="1">
                 <StackPanel Orientation="Horizontal">
                     <Label Name="LBL_PSWD" Content="Пароль" VerticalAlignment="Center" Width="60" Margin="4 0 0 0"/>
-                    <TextBox Grid.Row="2" Name="TB_PASSWORD" Height="25" Width="150" VerticalAlignment="Center" Tag="Введите пароль..." />
+                    <TextBox Grid.Row="2" Name="TB_PASSWORD" Height="25" Width="150" Margin="4 10 0 0" VerticalAlignment="Center" Tag="" />
                 </StackPanel>
             </Canvas>
 

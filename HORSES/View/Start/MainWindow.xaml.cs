@@ -24,21 +24,21 @@ namespace HORSES
             InitializeComponent();
         }
 
-        private void AppExit() => Process.GetCurrentProcess().Kill();
+        private async void AppExit() => Process.GetCurrentProcess().Kill();
 
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        private async void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             AppExit();
         }
 
-        private void BTN_START_Click(object sender, RoutedEventArgs e)
+        private async void BTN_START_Click(object sender, RoutedEventArgs e)
         {
             Autorize autorize = new Autorize();
             this.Hide();
             autorize.Show();
         }
 
-        private void BTN_INFORMATION_Click(object sender, RoutedEventArgs e)
+        private async void BTN_INFORMATION_Click(object sender, RoutedEventArgs e)
         {
             StartInfoWindow window = new StartInfoWindow();
             window.ShowDialog();
