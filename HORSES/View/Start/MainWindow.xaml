@@ -9,14 +9,14 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="200"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="70"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" Content="Конные состязания" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18"/>
-        <Image Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="C:\Users\altas\source\repos\HORSES\HORSES\Resources\Horses.jpg"/>
+        <Image Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="..\..\Resources\Horses.jpg"/>
 
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
@@ -24,8 +24,44 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button Name="BTN_START" Click="BTN_START_Click" Grid.Column="0" Content="Начать работу" Width="220"/>
-            <Button Name="BTN_INFORMATION" Click="BTN_INFORMATION_Click" Grid.Column="1" Content="Информация о работе с программой" Width="220"/>
+            <Button Name="BTN_START" Click="BTN_START_Click" Grid.Column="0" Content="Начать работу" Width="220">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#4CAF50"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontSize" Value="16"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#45A049"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#388E3C"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Name="BTN_INFORMATION" Click="BTN_INFORMATION_Click" Grid.Column="1" Content="Информация" Width="220">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#2196F3"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontSize" Value="16"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1976D2"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#1565C0"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </Grid>
 
         <Button Grid.Row="4" x:Name="CloseButton" Width="100" Height="40" Content="Закрыть"
@@ -35,6 +71,8 @@
                 <Style TargetType="Button">
                     <Setter Property="Background" Value="Red"/>
                     <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
                     <Setter Property="Cursor" Value="Hand"/>
                     <Style.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
