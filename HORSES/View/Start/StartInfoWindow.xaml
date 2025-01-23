@@ -19,7 +19,7 @@
 
                
 
-                <TextBlock Text="Приложение разработал: Алташев.З.А" 
+                <TextBlock Text="Приложение разработал: Алташев.З.А, Попов Я.Ю" 
                            FontSize="16" 
                            Foreground="#555555" 
                            HorizontalAlignment="Center" 
