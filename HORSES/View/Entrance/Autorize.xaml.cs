@@ -51,5 +51,12 @@ namespace HORSES.View.Entrance
             this.Close();
             window.Show();
         }
+
+        private async void BTN_RETURN_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow window = new MainWindow();
+            this.Close();
+            window.Show();
+        }
     }
 }

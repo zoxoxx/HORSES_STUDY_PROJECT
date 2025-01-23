@@ -96,6 +96,28 @@
                     </Style>
                 </Button.Style>
             </Button>
+            
+            <!-- Добавляем кнопку "Закрыть" -->
+            <Button Content="Закрыть" Margin="10 10 10 11" Name="BTN_RETURN" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="2" Width="88" Height="34" 
+                    Background="Red" Foreground="White" Click="BTN_RETURN_Click">
+                <Button.Effect>
+                    <DropShadowEffect Color="Black" Direction="320" ShadowDepth="5" Opacity="0.5"/>
+                </Button.Effect>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Rectangle Fill="{TemplateBinding Background}" RadiusX="10" RadiusY="10"/>
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
         </Grid>
     </Grid>
 </Window>
