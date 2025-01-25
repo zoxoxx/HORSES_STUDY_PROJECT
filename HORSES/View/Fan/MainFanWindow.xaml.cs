@@ -37,5 +37,12 @@ namespace HORSES.View.Fan
             this.Close();
             window.Show();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            CompetitionAndRacesWindow window = new CompetitionAndRacesWindow(true);
+            this.Close();
+            window.Show();
+        }
     }
 }
