@@ -37,5 +37,12 @@ namespace HORSES.View.Fan
             this.Close();
             window.Show();
         }
+
+        private void BTN_DONATION_Click(object sender, RoutedEventArgs e)
+        {
+            DonationWindow window = new DonationWindow();
+            this.Close();
+            window.Show();
+        }
     }
 }
