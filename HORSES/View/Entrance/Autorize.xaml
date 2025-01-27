@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HORSES.View.Entrance"
+        xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="Авторизация" Height="272" Width="505" MinWidth="505" MinHeight="272" MaxWidth="505" MaxHeight="272" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}">
     <Window.Resources>
@@ -35,7 +36,8 @@
     </Window.Resources>
 
     <Grid>
-        <Rectangle Fill="LightPink" Width="505" Height="272" RadiusX="15" RadiusY="15" Opacity="0.9"></Rectangle>
+        <Rectangle Fill="LightPink" Width="505" Height="272" RadiusX="15" RadiusY="15" Opacity="0.9"/>
+
         <Grid Margin="0 10 0 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="110"/>
@@ -48,11 +50,11 @@
                 <RowDefinition Height="68"/>
                 <RowDefinition Height="68"/>
                 <RowDefinition Height="68"/>
-                <!-- Дополнительная строка под кнопку "Я болельщик" -->
             </Grid.RowDefinitions>
 
             <Canvas Grid.Row="1" Grid.Column="1">
                 <StackPanel Orientation="Horizontal">
+                    <material:PackIcon Kind="Account" Width="24" Height="24" VerticalAlignment="Center" Margin="4 0 0 0"/>
                     <Label Name="LBL_LOGIN" Content="Логин" VerticalAlignment="Center" Margin="4 0 0 0" Width="60"/>
                     <TextBox Grid.Row="1" Name="TB_LOGIN" Height="25" Width="150" Margin="4 10 0 0" VerticalAlignment="Center" Tag=""/>
                 </StackPanel>
@@ -60,24 +62,29 @@
 
             <Canvas Grid.Row="2" Grid.Column="1">
                 <StackPanel Orientation="Horizontal">
+                    <material:PackIcon Kind="Lock" Width="24" Height="24" VerticalAlignment="Center" Margin="4 0 0 0"/>
                     <Label Name="LBL_PSWD" Content="Пароль" VerticalAlignment="Center" Width="60" Margin="4 0 0 0"/>
-                    <TextBox Grid.Row="2" Name="TB_PASSWORD" Height="25" Width="150" Margin="4 10 0 0" VerticalAlignment="Center" Tag="" />
+                    <TextBox Grid.Row="2" Name="TB_PASSWORD" Height="25" Width="150" Margin="4 10 0 0" VerticalAlignment="Center" Tag=""/>
                 </StackPanel>
             </Canvas>
 
-            <Button Content="Войти" Margin="10 0 0 11" Name="BTN_VHOD" HorizontalAlignment="Left" Background="BlanchedAlmond" Grid.Row="3" Grid.Column="1" Width="203.5" Height="50" Click="BTN_VHOD_Click">
-                <Button.Triggers>
-                    <EventTrigger RoutedEvent="Button.MouseEnter">
-                        <BeginStoryboard>
-                            <Storyboard/>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </Button.Triggers>
+
+            <Button Margin="19,4,0,14" Name="BTN_VHOD" HorizontalAlignment="Left" Background="BlanchedAlmond" Grid.Row="3" Grid.Column="1" Width="204" Height="50" Click="BTN_VHOD_Click">
+                <StackPanel Orientation="Horizontal">
+                    <material:PackIcon Kind="Login" Width="24" Height="24" Margin="5"/>
+                    <TextBlock Text="Войти" VerticalAlignment="Center"/>
+                </StackPanel>
             </Button>
 
-            <!-- Добавляем кнопку "Я болельщик" -->
-            <Button Content="Я болельщик" Margin="10 10 0 11" Name="BTN_FAN" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Width="88" Height="34" 
+
+            <Button Margin="10 10 0 11" Name="BTN_FAN" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="0" Width="88" Height="34" 
                     Background="DarkOliveGreen" Foreground="White" Click="BTN_FAN_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <material:PackIcon Kind="AccountGroup" Width="24" Height="24" Margin="5"/>
+                        <TextBlock Text="Я фанат" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button.Content>
                 <Button.Effect>
                     <DropShadowEffect Color="Black" Direction="320" ShadowDepth="5" Opacity="0.5"/>
                 </Button.Effect>
@@ -96,10 +103,15 @@
                     </Style>
                 </Button.Style>
             </Button>
-            
-            <!-- Добавляем кнопку "Закрыть" -->
-            <Button Content="Закрыть" Margin="10 10 10 11" Name="BTN_RETURN" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="2" Width="88" Height="34" 
+
+            <Button Margin="10 10 10 11" Name="BTN_RETURN" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="2" Width="88" Height="34" 
                     Background="Red" Foreground="White" Click="BTN_RETURN_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <material:PackIcon Kind="Close" Width="24" Height="24" Margin="5"/>
+                        <TextBlock Text="Закрыть" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button.Content>
                 <Button.Effect>
                     <DropShadowEffect Color="Black" Direction="320" ShadowDepth="5" Opacity="0.5"/>
                 </Button.Effect>
