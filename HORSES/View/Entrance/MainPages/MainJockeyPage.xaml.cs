@@ -49,5 +49,11 @@ namespace HORSES.View.Entrance.MainPages
         {
 
         }
+
+        private void BTN_BACK_MAIN_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow window = new MainWindow();
+            window.Show();
+        }
     }
 }

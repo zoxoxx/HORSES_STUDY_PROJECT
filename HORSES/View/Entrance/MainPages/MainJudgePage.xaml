@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:HORSES.View.Entrance.MainPages"
+      xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="AliceBlue" Margin="10">
@@ -24,19 +25,54 @@
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5">
-                        <Button Content="Назначение дорожки" Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="Track_Assignment_Click"/>
-                        <Button Content="Просмотр информации об участниках" Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="Viewing_Information_About_Participants_Click"/>
-                        <Button Content="Ввод и редактирование об результотов заезда" Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold"/>
+                        <Button Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold">
+                            <StackPanel Orientation="Horizontal">
+                                <material:PackIcon Kind="TrackChanges" Width="24" Height="24" Margin="5"/>
+                                <TextBlock Text="Назначение дорожки" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold">
+                            <StackPanel Orientation="Horizontal">
+                                <material:PackIcon Kind="AccountBox" Width="24" Height="24" Margin="5"/>
+                                <TextBlock Text="Просмотр информации об участниках" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold">
+                            <StackPanel Orientation="Horizontal">
+                                <material:PackIcon Kind="Edit" Width="24" Height="24" Margin="5"/>
+                                <TextBlock Text="Ввод об результатах заезда" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
                     </StackPanel>
 
                     <StackPanel Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5">
-                        <Button Content="Просмотр результатов заезда" Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="Viewing_Check_Results_Click"/>
-                        <Button Content="Ввод информации о нарушениях участников" Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="Violations_Click"/>
-                        <Button Content="Отчет о результатах заездах" Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="Report_Click"/>
+                        <Button Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold">
+                            <StackPanel Orientation="Horizontal">
+                                <material:PackIcon Kind="Timeline" Width="24" Height="24" Margin="5"/>
+                                <TextBlock Text="Просмотр результатов заезда" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold">
+                            <StackPanel Orientation="Horizontal">
+                                <material:PackIcon Kind="Warning" Width="24" Height="24" Margin="5"/>
+                                <TextBlock Text="Нарушениях участников" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold">
+                            <StackPanel Orientation="Horizontal">
+                                <material:PackIcon Kind="Report" Width="24" Height="24" Margin="5"/>
+                                <TextBlock Text="Отчет о результатах заездах" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
                     </StackPanel>
                 </Grid>
 
-                <Button Grid.Row="2" Content="Вернуться на главную форму" Width="310" Height="50" Margin="5" Name="BTN_BACK_MAIN" Click="BTN_BACK_MAIN_Click" Background="#FFD6D6D6" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                <Button Grid.Row="2" Width="350" Height="40" Margin="5" Name="BTN_BACK_MAIN" Click="BTN_BACK_MAIN_Click" Background="#FFD6D6D6" Foreground="Black" FontWeight="Bold">
+                    <StackPanel Orientation="Horizontal">
+                        <material:PackIcon Kind="Home" Width="24" Height="24" Margin="5"/>
+                        <TextBlock Text="Вернуться на главную форму" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
             </Grid>
         </Border>
     </Grid>

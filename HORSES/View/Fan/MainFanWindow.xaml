@@ -4,11 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HORSES.View.Fan"
+        xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="Главное окно болельщика" Height="450" Width="800" WindowStartupLocation="CenterScreen">
-    <Grid Background="AliceBlue" Margin="10" >
-        
-        <Border BorderBrush="DarkGray" BorderThickness="2" CornerRadius="15" >
+    <Grid Background="AliceBlue" Margin="10">
+
+        <Border BorderBrush="DarkGray" BorderThickness="2" CornerRadius="15">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -18,11 +19,40 @@
                 <Image Source="..\..\Resources\FanIcon.png" Height="150" Margin="0,0,0,10" VerticalAlignment="Top" HorizontalAlignment="Center"/>
 
                 <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Content="Просмотреть информацию о состязаниях и заездах" Width="310" Height="40" Margin="5" Name="BTN_COMPETITION_INFO" Click="BTN_COMPETITION_INFO_Click" Background="#FF6699FF" Foreground="White" FontWeight="Bold"/>
-                    <Button Content="Просмотр информации об участниках заезда" Width="310" Height="40" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="Button_Click"/>
-                    <Button Content="Просмотр результатов заезда" Width="310" Height="40" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="BTN_RESULT_Click"/>
-                    <Button Content="Пожертвовать средства на содержание лошади" Width="310" Height="40" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="BTN_DONATION_Click"/>
-                    <Button Content="Вернуться на главную форму" Width="310" Height="40" Margin="5" Name="BTN_BACK_MAIN" Click="BTN_BACK_MAIN_Click" Background="#FFD6D6D6" Foreground="Black" FontWeight="Bold"/>
+                    <Button Width="350" Height="40" Margin="5" Name="BTN_COMPETITION_INFO" Click="BTN_COMPETITION_INFO_Click" Background="#FF6699FF" Foreground="White" FontWeight="Bold">
+                        <StackPanel Orientation="Horizontal">
+                            <material:PackIcon Kind="Car" Width="24" Height="24" Margin="5"/>
+                            <TextBlock Text="Просмотреть информацию о состязаниях и заездах" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Width="350" Height="40" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="Button_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <material:PackIcon Kind="AccountGroup" Width="24" Height="24" Margin="5"/>
+                            <TextBlock Text="Просмотр информации об участниках заезда" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Width="350" Height="40" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="BTN_RESULT_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <material:PackIcon Kind="Trophy" Width="24" Height="24" Margin="5"/>
+                            <TextBlock Text="Просмотр результатов заезда" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Width="350" Height="40" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="BTN_DONATION_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <material:PackIcon Kind="Cash" Width="24" Height="24" Margin="5"/>
+                            <TextBlock Text="Пожертвовать средства на содержание лошади" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Width="350" Height="40" Margin="5" Name="BTN_BACK_MAIN" Click="BTN_BACK_MAIN_Click" Background="#FFD6D6D6" Foreground="Black" FontWeight="Bold">
+                        <StackPanel Orientation="Horizontal">
+                            <material:PackIcon Kind="Home" Width="24" Height="24" Margin="5"/>
+                            <TextBlock Text="Вернуться на главную форму" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
             </Grid>
         </Border>
