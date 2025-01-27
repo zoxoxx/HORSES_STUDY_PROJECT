@@ -101,43 +101,46 @@ namespace HORSES.View.Fan
         {
             if (HorseComboBox.SelectedItem == null)
             {
-                MessageBox.Show("Пожалуйста, выберите лошадь.");
+                MessageBox.Show("Пожалуйста, выберите лошадь.", "Ошибка ввода", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return false;
             }
 
             if (!decimal.TryParse(DonationAmountTextBox.Text, out decimal donationAmount) || donationAmount <= 0)
             {
-                MessageBox.Show("Пожалуйста, введите корректную сумму пожертвования.");
+                MessageBox.Show("Пожалуйста, введите корректную сумму пожертвования.", "Ошибка ввода", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return false;
             }
 
             string cardNumber = CardNumberTextBox.Text;
             if (!IsValidCardNumber(cardNumber))
             {
-                MessageBox.Show("Некорректный номер банковской карты. Должно быть 16 цифр.");
+                MessageBox.Show("Некорректный номер банковской карты. Должно быть 16 цифр.", "Ошибка карты", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
             if (MonthComboBox.SelectedItem == null || YearComboBox.SelectedItem == null)
             {
-                MessageBox.Show("Пожалуйста, выберите срок действия карты.");
+                MessageBox.Show("Пожалуйста, выберите срок действия карты.", "Ошибка ввода", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return false;
             }
 
             if (string.IsNullOrWhiteSpace(FullNameTextBox.Text))
             {
-                MessageBox.Show("Пожалуйста, введите фамилию и имя отправителя.");
-                return false;
-            }
-            string cvvText = CVVTextBox.Text;
-            if (!Regex.IsMatch(cvvText, @"^\d{3}$"))
-            {
-                MessageBox.Show("Некорректный CVV2 код. Должно быть 3 цифры.");
+                MessageBox.Show("Пожалуйста, введите фамилию и имя отправителя.", "Ошибка ввода", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return false;
             }
 
+            string cvvText = CVVTextBox.Text;
+            if (!Regex.IsMatch(cvvText, @"^\d{3}$"))
+            {
+                MessageBox.Show("Некорректный CVV2 код. Должно быть 3 цифры.", "Ошибка CVV", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+
+            MessageBox.Show("Все данные корректны!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
             return true;
         }
+
 
         private bool IsValidCardNumber(string cardNumber)
         {
