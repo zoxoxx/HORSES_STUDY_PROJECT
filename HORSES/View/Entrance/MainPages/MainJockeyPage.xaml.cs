@@ -24,5 +24,30 @@ namespace HORSES.View.Entrance.MainPages
         {
             InitializeComponent();
         }
+
+        private void Information_Jockey_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Information_Horse_Clickkj(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Registration_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Information_Participants_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Viewing_Results_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

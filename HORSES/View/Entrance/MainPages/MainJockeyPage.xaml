@@ -5,10 +5,38 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:HORSES.View.Entrance.MainPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="MainJockeyPage">
+      d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="AliceBlue" Margin="10">
+        <Border BorderBrush="DarkGray" BorderThickness="2" CornerRadius="15">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-    <Grid>
-        
+                <Image Source="\Resources\JockeyIcon.png" Height="150" Margin="0,0,0,10" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+                <Grid Grid.Row="1" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5">
+                        <Button Content="Информация о жокее" Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="Information_Jockey_Click"/>
+                        <Button Content="Информация о лошадях" Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="Information_Horse_Clickkj"/>
+                        <Button Content="Регистрация на заезд" Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="Registration_Click"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5">
+                        <Button Content="Информация об участниках" Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="Information_Participants_Click"/>
+                        <Button Content="Просмотр результатов" Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="Viewing_Results_Click"/>
+                    </StackPanel>
+                </Grid>
+
+                <Button Grid.Row="2" Content="Вернуться на главную форму" Width="310" Height="50" Margin="5" Name="BTN_BACK_MAIN" Click="BTN_BACK_MAIN_Click" Background="#FFD6D6D6" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            </Grid>
+        </Border>
     </Grid>
 </Page>
