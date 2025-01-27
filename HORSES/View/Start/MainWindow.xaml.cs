@@ -1,5 +1,6 @@
 ﻿using HORSES.View;
 using HORSES.View.Entrance;
+using HORSES.View.Entrance.JockeyWindows;
 using System.Diagnostics;
 using System.Text;
 using System.Windows;
@@ -40,7 +41,7 @@ namespace HORSES
 
         private async void BTN_INFORMATION_Click(object sender, RoutedEventArgs e)
         {
-            StartInfoWindow window = new StartInfoWindow();
+            HorseWindow window = new HorseWindow();
             window.ShowDialog();
         }
     }
