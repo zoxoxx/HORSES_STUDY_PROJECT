@@ -19,7 +19,7 @@
 
                 <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Button Content="Просмотреть информацию о состязаниях и заездах" Width="310" Height="40" Margin="5" Name="BTN_COMPETITION_INFO" Click="BTN_COMPETITION_INFO_Click" Background="#FF6699FF" Foreground="White" FontWeight="Bold"/>
-                    <Button Content="Просмотр информации об участниках заезда" Width="310" Height="40" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold"/>
+                    <Button Content="Просмотр информации об участниках заезда" Width="310" Height="40" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="Button_Click"/>
                     <Button Content="Просмотр результатов заезда" Width="310" Height="40" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold"/>
                     <Button Content="Пожертвовать средства на содержание лошади" Width="310" Height="40" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="BTN_DONATION_Click"/>
                     <Button Content="Вернуться на главную форму" Width="310" Height="40" Margin="5" Name="BTN_BACK_MAIN" Click="BTN_BACK_MAIN_Click" Background="#FFD6D6D6" Foreground="Black" FontWeight="Bold"/>

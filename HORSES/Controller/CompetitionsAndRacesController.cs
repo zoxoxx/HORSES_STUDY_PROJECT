@@ -22,7 +22,7 @@ namespace HORSES.Controller
                     combinedEntry => combinedEntry.link.CheckInId,
                     checkIn => checkIn.Id,
                     (combinedEntry, checkIn) => new { combinedEntry, checkIn })
-                .Where(finalEntry => finalEntry.combinedEntry.competition.Id == currentCompetition.Id)
+                .Where(finalEntry => finalEntry.combinedEntry.competition.Id == currentCompetition.Id && finalEntry.combinedEntry.competition.DateStart >= DateOnly.FromDateTime(DateTime.Now))
                 .OrderBy(finalEntry => finalEntry.checkIn.SequenceNumber)
                 .Select(finalEntry => finalEntry.checkIn).ToListAsync();
             return new ObservableCollection<CheckIn>(checkIns);

@@ -27,9 +27,11 @@ namespace HORSES.View.Fan
     {
         ObservableCollection<Competition> competitions = null;
         ObservableCollection<CheckIn> races = null;
-        public CompetitionAndRacesWindow()
+        bool mode = false;
+        public CompetitionAndRacesWindow(bool mode = false)
         {
             InitializeComponent();
+            this.mode = mode;
         }
 
         private async void Grid_Loaded(object sender, RoutedEventArgs e)
@@ -50,7 +52,19 @@ namespace HORSES.View.Fan
 
         private async void DG_RACES_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (DG_RACES.SelectedItem is null)
+                return;
 
+            if (mode == false)
+            { 
+                MessageBox.Show("Это забеги!");
+                return;
+            }
+
+            var selectedItem = DG_RACES.SelectedItem as CheckIn;
+            ParticipantsRaceWindow window = new ParticipantsRaceWindow(selectedItem);
+            this.Hide();
+            window.Show();
         }
     }
 }

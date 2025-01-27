@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HORSES.View.Fan"
         mc:Ignorable="d"
-        Title="CompetitionAndRacesWindow" Height="1080" Width="1920" WindowStartupLocation="CenterScreen">
-    <Grid Loaded="Grid_Loaded">
+        Title="Соревнования и Забеги" Height="1080" Width="1920" WindowStartupLocation="CenterScreen" WindowStyle="None">
+
+    <Grid Loaded="Grid_Loaded" Background="#EFEFEF">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -14,34 +15,82 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="220"/>
-            <RowDefinition />
+            <RowDefinition/>
             <RowDefinition Height="220"/>
         </Grid.RowDefinitions>
 
-        <DataGrid Name="DG_COMPETITIONS" HorizontalContentAlignment="Center" Height="640" Width="940" Grid.Row="1" Grid.Column="0" Margin="0 0 20 0" CanUserAddRows="False" AutoGenerateColumns="False" ItemsSource="{Binding competitions}" SelectionChanged="DG_COMPETITIONS_SelectionChanged">
+        <Label HorizontalAlignment="Center"
+       VerticalAlignment="Center"
+       Content="Соревнования"
+       FontSize="24"
+       FontWeight="Bold"
+       Foreground="#333"
+       Margin="10"
+       Grid.Row="0"
+       Grid.Column="0"/>
+
+        <Label HorizontalAlignment="Center"
+       VerticalAlignment="Center"
+       Content="Забеги"
+       FontSize="24"
+       FontWeight="Bold"
+       Foreground="#333"
+       Margin="10"
+       Grid.Row="0"
+       Grid.Column="1"/>
+
+        <DataGrid Name="DG_COMPETITIONS" 
+                  HorizontalContentAlignment="Center" 
+                  VerticalAlignment="Center" 
+                  Height="640" 
+                  Width="940" 
+                  Grid.Row="1" 
+                  Grid.Column="0" 
+                  Margin="0 0 20 0" 
+                  CanUserAddRows="False" 
+                  AutoGenerateColumns="False" 
+                  ItemsSource="{Binding competitions}" 
+                  SelectionChanged="DG_COMPETITIONS_SelectionChanged" 
+                  BorderBrush="#D3D3D3" 
+                  BorderThickness="1">
             <DataGrid.Resources>
                 <Style TargetType="DataGridColumnHeader">
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="Background" Value="#F5F5F5"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
                 </Style>
             </DataGrid.Resources>
-            
+
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Наименование" Width="*" Binding="{Binding Name}" ></DataGridTextColumn>
-                <DataGridTextColumn Header="Дата начала" Width="*" Binding="{Binding DateStart}"/>
-                <DataGridTextColumn Header="Время начала" Width="*" Binding="{Binding TimeStart}"/>
+                <DataGridTextColumn Header="Наименование" Width="*" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Дата начала" Width="*" Binding="{Binding DateStart}"  />
+                <DataGridTextColumn Header="Время начала" Width="*" Binding="{Binding TimeStart}" />
             </DataGrid.Columns>
         </DataGrid>
 
-        <DataGrid Name="DG_RACES" Height="640" Width="940" Grid.Row="1" Grid.Column="1" Margin="20 0 0 0" CanUserAddRows="False" AutoGenerateColumns="False" ItemsSource="{Binding races}" SelectionChanged="DG_RACES_SelectionChanged">
+        <DataGrid Name="DG_RACES" 
+                  Height="640" 
+                  Width="940" 
+                  Grid.Row="1" 
+                  Grid.Column="1" 
+                  Margin="20 0 0 0" 
+                  CanUserAddRows="False" 
+                  AutoGenerateColumns="False" 
+                  ItemsSource="{Binding races}" 
+                  SelectionChanged="DG_RACES_SelectionChanged"
+                  BorderBrush="#D3D3D3" 
+                  BorderThickness="1">
             <DataGrid.Resources>
                 <Style TargetType="DataGridColumnHeader">
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="Background" Value="#F5F5F5"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
                 </Style>
             </DataGrid.Resources>
 
-            <DataGrid.Columns >
+            <DataGrid.Columns>
                 <DataGridTextColumn Header="Порядковый номер" Width="*" Binding="{Binding SequenceNumber}"/>
                 <DataGridTextColumn Header="Наименование" Width="*" Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="Призовой фонд" Width="*" Binding="{Binding PrizeFund}"/>
