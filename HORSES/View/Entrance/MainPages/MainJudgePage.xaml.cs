@@ -24,5 +24,30 @@ namespace HORSES.View.Entrance.MainPages
         {
             InitializeComponent();
         }
+
+        private void Track_Assignment_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Viewing_Information_About_Participants_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Viewing_Check_Results_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Violations_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Report_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
