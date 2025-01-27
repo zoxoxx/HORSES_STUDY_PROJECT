@@ -3,20 +3,54 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:HORSES.View.Fan"
         mc:Ignorable="d"
-        Title="Результаты заезда" Height="450" Width="800">
-    <Grid Loaded="Grid_Loaded">
-        <DataGrid Name="RESULTS">
-            <DataGrid.Resources>
-                <Style TargetType="DataGridColumnHeader">
-                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                    <Setter Property="VerticalContentAlignment" Value="Center"/>
-                    <Setter Property="Background" Value="#F5F5F5"/>
-                    <Setter Property="FontWeight" Value="Bold"/>
-                </Style>
-            </DataGrid.Resources>
+        Title="Результаты заезда" Height="500" Width="900">
 
+    <Window.Resources>
+        <Style TargetType="DataGrid" x:Key="CustomDataGridStyle">
+            <Setter Property="GridLinesVisibility" Value="None"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="Margin" Value="20"/>
+            <Setter Property="Background" Value="#E3F2FD"/>
+            <Setter Property="BorderBrush" Value="#B3E5FC"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+        </Style>
+
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Background" Value="#1E88E5"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+
+        <Style TargetType="DataGridCell">
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Loaded="Grid_Loaded" Background="#E1F5FE">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20">
+            <material:PackIcon Kind="Horse" Width="30" Height="30" Margin="0,0,10,0" Foreground="#1E88E5"/>
+            <TextBlock Text="Результаты заезда" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" Name="RESULTS" Style="{StaticResource CustomDataGridStyle}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Фамилия наездника" Width="*" Binding="{Binding CheckInId}" />
                 <DataGridTextColumn Header="Имя скакуна" Width="*" Binding="{Binding Indicator}"/>
@@ -24,7 +58,7 @@
                 <DataGridTextColumn Header="Цвет экипировки" Width="*" Binding="{Binding ParticipantId}"/>
                 <DataGridTextColumn Header="Время финиша" Width="*" Binding="{Binding TimeEnd}"/>
                 <DataGridTextColumn Header="Статус проверки" Width="*" Binding="{Binding CheckIn}"/>
-                <DataGridTextColumn Header="Идентификатор участника" Width="*" Binding="{Binding Participant }"/>
+                <DataGridTextColumn Header="Идентификатор участника" Width="*" Binding="{Binding Participant}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
