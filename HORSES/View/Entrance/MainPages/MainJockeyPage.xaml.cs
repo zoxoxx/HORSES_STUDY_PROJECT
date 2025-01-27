@@ -43,7 +43,8 @@ namespace HORSES.View.Entrance.MainPages
 
         private void Information_Participants_Click(object sender, RoutedEventArgs e)
         {
-
+            CompetitionAndRacesWindow window = new CompetitionAndRacesWindow(true);
+            window.Show();
         }
 
         private void Viewing_Results_Click(object sender, RoutedEventArgs e)

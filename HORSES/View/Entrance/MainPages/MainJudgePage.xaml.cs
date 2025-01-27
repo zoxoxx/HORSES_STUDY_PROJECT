@@ -62,5 +62,11 @@ namespace HORSES.View.Entrance.MainPages
             ResultWindow window = new ResultWindow();
             window.Show();
         }
+
+        private void Information_Participants_Click(object sender, RoutedEventArgs e)
+        {
+            CompetitionAndRacesWindow window = new CompetitionAndRacesWindow(true);
+            window.Show();
+        }
     }
 }
