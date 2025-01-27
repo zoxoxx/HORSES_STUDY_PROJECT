@@ -1,0 +1,31 @@
+﻿<Window x:Class="HORSES.View.Fan.ResultWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HORSES.View.Fan"
+        mc:Ignorable="d"
+        Title="Результаты заезда" Height="450" Width="800">
+    <Grid Loaded="Grid_Loaded">
+        <DataGrid Name="RESULTS">
+            <DataGrid.Resources>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="Background" Value="#F5F5F5"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия наездника" Width="*" Binding="{Binding CheckInId}" />
+                <DataGridTextColumn Header="Имя скакуна" Width="*" Binding="{Binding Indicator}"/>
+                <DataGridTextColumn Header="Порода" Width="*" Binding="{Binding Result}"/>
+                <DataGridTextColumn Header="Цвет экипировки" Width="*" Binding="{Binding ParticipantId}"/>
+                <DataGridTextColumn Header="Время финиша" Width="*" Binding="{Binding TimeEnd}"/>
+                <DataGridTextColumn Header="Статус проверки" Width="*" Binding="{Binding CheckIn}"/>
+                <DataGridTextColumn Header="Идентификатор участника" Width="*" Binding="{Binding Participant }"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
