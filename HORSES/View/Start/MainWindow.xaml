@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HORSES"
+        xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="Конные состязания" Height="450" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
@@ -24,7 +25,13 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button Name="BTN_START" Click="BTN_START_Click" Grid.Column="0" Content="Начать работу" Width="220">
+            <Button Name="BTN_START" Click="BTN_START_Click" Grid.Column="0" Width="220">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <material:PackIcon Kind="Play" Width="24" Height="24" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock VerticalAlignment="Center" Text="Начать работу" Margin="5"/>
+                    </StackPanel>
+                </Button.Content>
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#4CAF50"/>
@@ -43,7 +50,14 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Name="BTN_INFORMATION" Click="BTN_INFORMATION_Click" Grid.Column="1" Content="Информация" Width="220">
+
+            <Button Name="BTN_INFORMATION" Click="BTN_INFORMATION_Click" Grid.Column="1" Width="220">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <material:PackIcon Kind="Information" Width="24" Height="24" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock VerticalAlignment="Center" Text="Информация" Margin="5"/>
+                    </StackPanel>
+                </Button.Content>
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#2196F3"/>
@@ -64,9 +78,14 @@
             </Button>
         </Grid>
 
-        <Button Grid.Row="4" x:Name="CloseButton" Width="100" Height="40" Content="Закрыть"
-        HorizontalAlignment="Center" VerticalAlignment="Center" 
-        Background="Red" Foreground="White" FontSize="16" FontWeight="Bold" Click="CloseButton_Click">
+        <Button Grid.Row="4" x:Name="CloseButton" Width="120" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Background="Red" Foreground="White" FontSize="16" FontWeight="Bold" Click="CloseButton_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <material:PackIcon Kind="Close" Width="24" Height="24" VerticalAlignment="Center" Margin="5"/>
+                    <TextBlock VerticalAlignment="Center" Text="Закрыть" Margin="5"/>
+                </StackPanel>
+            </Button.Content>
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="Background" Value="Red"/>

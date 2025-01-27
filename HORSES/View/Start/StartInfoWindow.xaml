@@ -4,26 +4,33 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HORSES.View"
+        xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="О приложении" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
 
     <Grid Background="#F0F0F0">
         <Border CornerRadius="20" Background="White" Padding="20" Margin="10">
             <StackPanel>
-                <TextBlock Text="О приложении" 
-                           FontSize="24" 
-                           FontWeight="Bold" 
-                           Foreground="#333333" 
-                           HorizontalAlignment="Center" 
-                           Margin="0,0,0,20"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+                    <material:PackIcon Kind="Information" Width="30" Height="30" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                    <TextBlock Text="О приложении" 
+                               FontSize="24" 
+                               FontWeight="Bold" 
+                               Foreground="#333333" 
+                               VerticalAlignment="Center"/>
+                </StackPanel>
 
-               
+                <TextBlock HorizontalAlignment="Center" Margin="0,0,0,10">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <material:PackIcon Kind="Trophy" Width="30" Height="30" VerticalAlignment="Center" Margin="0,5,10,0" Foreground="Gold"/>
+                        <TextBlock Text="Приложение разработали: Алташев.З.А, Попов Я.Ю" 
+                                   FontSize="16" 
+                                   Foreground="#555555" 
+                                   VerticalAlignment="Center"/>
+                        <material:PackIcon Kind="Trophy" Width="30" Height="30" VerticalAlignment="Center" Margin="10,5,0,0" Foreground="Gold"/>
+                    </StackPanel>
+                </TextBlock>
 
-                <TextBlock Text="Приложение разработал: Алташев.З.А, Попов Я.Ю" 
-                           FontSize="16" 
-                           Foreground="#555555" 
-                           HorizontalAlignment="Center" 
-                           Margin="0,0,0,10"/>
 
                 <TextBlock Text="Версия 1.0.0" 
                            FontSize="14" 
@@ -37,14 +44,14 @@
                            TextWrapping="Wrap"
                            Margin="0,0,0,20"/>
 
-                <Button Content="Закрыть" 
-                        Width="100" 
-                        Height="30" 
-                        HorizontalAlignment="Center" 
-                        Background="#FF5733" 
-                        Foreground="White" 
-                        FontWeight="Bold"
-                        Click="Button_Click"/>
+                <Button Width="100" Height="30" HorizontalAlignment="Center" Background="#FF5733" Foreground="White" FontWeight="Bold" Click="Button_Click">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <material:PackIcon Kind="Close" Width="20" Height="20" VerticalAlignment="Center" Margin="0,5,10,0"/>
+                            <TextBlock Text="Закрыть" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
             </StackPanel>
         </Border>
     </Grid>
