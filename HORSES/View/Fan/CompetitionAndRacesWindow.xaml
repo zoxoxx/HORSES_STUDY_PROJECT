@@ -8,7 +8,40 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Соревнования и Забеги" Height="1080" Width="1920" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
-    <Grid Loaded="Grid_Loaded" Background="#EFEFEF">
+    <Window.Resources>
+        <Style TargetType="Window">
+            <Setter Property="Background" Value="#E3F2FD"/>
+        </Style>
+
+        <Style TargetType="DataGrid" x:Key="BlueDataGridStyle">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="Margin" Value="20"/>
+            <Setter Property="Background" Value="#E1F5FE"/>
+            <Setter Property="BorderBrush" Value="#81D4FA"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+        </Style>
+
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Background" Value="#29B6F6"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+
+        <Style TargetType="DataGridCell">
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Background" Value="#E1F5FE"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Loaded="Grid_Loaded" Background="#E3F2FD">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -20,20 +53,20 @@
             <RowDefinition Height="220"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="#333" Margin="10">
+        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="#0277BD" Margin="10">
             <Label.Content>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <materialDesign:PackIcon Kind="Trophy" Width="24" Height="24" VerticalAlignment="Center" Margin="5"/>
-                    <TextBlock Text="Соревнования" VerticalAlignment="Center" />
+                    <materialDesign:PackIcon Kind="Trophy" Width="24" Height="24" VerticalAlignment="Center" Margin="5" Foreground="#0277BD"/>
+                    <TextBlock Text="Соревнования" VerticalAlignment="Center" Foreground="#0277BD"/>
                 </StackPanel>
             </Label.Content>
         </Label>
 
-        <Label Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="#333" Margin="10">
+        <Label Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="#0277BD" Margin="10">
             <Label.Content>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <materialDesign:PackIcon Kind="Run" Width="24" Height="24" VerticalAlignment="Center" Margin="5"/>
-                    <TextBlock Text="Забеги" VerticalAlignment="Center" />
+                    <materialDesign:PackIcon Kind="Run" Width="24" Height="24" VerticalAlignment="Center" Margin="5" Foreground="#0277BD"/>
+                    <TextBlock Text="Забеги" VerticalAlignment="Center" Foreground="#0277BD"/>
                 </StackPanel>
             </Label.Content>
         </Label>
@@ -50,17 +83,7 @@
                   AutoGenerateColumns="False" 
                   ItemsSource="{Binding competitions}" 
                   SelectionChanged="DG_COMPETITIONS_SelectionChanged" 
-                  BorderBrush="#D3D3D3" 
-                  BorderThickness="1">
-            <DataGrid.Resources>
-                <Style TargetType="DataGridColumnHeader">
-                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                    <Setter Property="VerticalContentAlignment" Value="Center"/>
-                    <Setter Property="Background" Value="#F5F5F5"/>
-                    <Setter Property="FontWeight" Value="Bold"/>
-                </Style>
-            </DataGrid.Resources>
-
+                  Style="{StaticResource BlueDataGridStyle}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Наименование" Width="*" Binding="{Binding Name}" />
                 <DataGridTextColumn Header="Дата начала" Width="*" Binding="{Binding DateStart}"  />
@@ -78,17 +101,7 @@
                   AutoGenerateColumns="False" 
                   ItemsSource="{Binding races}" 
                   SelectionChanged="DG_RACES_SelectionChanged"
-                  BorderBrush="#D3D3D3" 
-                  BorderThickness="1">
-            <DataGrid.Resources>
-                <Style TargetType="DataGridColumnHeader">
-                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                    <Setter Property="VerticalContentAlignment" Value="Center"/>
-                    <Setter Property="Background" Value="#F5F5F5"/>
-                    <Setter Property="FontWeight" Value="Bold"/>
-                </Style>
-            </DataGrid.Resources>
-
+                  Style="{StaticResource BlueDataGridStyle}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Порядковый номер" Width="*" Binding="{Binding SequenceNumber}"/>
                 <DataGridTextColumn Header="Наименование" Width="*" Binding="{Binding Name}"/>
