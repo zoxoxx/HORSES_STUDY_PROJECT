@@ -32,112 +32,66 @@ namespace HORSES.View.Fan
 
         private void DonationWindow_Loaded(object sender, RoutedEventArgs e)
         {
-           /* List<Horse> horses = _context.Horses.ToList();
+            List<Horse> horses = _context.Horses.ToList();
 
             HorseComboBox.ItemsSource = horses;
             HorseComboBox.DisplayMemberPath = "Name";
-            HorseComboBox.SelectedValuePath = "Id";*/
+            HorseComboBox.SelectedValuePath = "Id";
         }
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
             if (ValidateInputs())
             {
-                ShowCardTypeLogo(CardNumberTextBox.Text);
                 MessageBox.Show("Данные успешно отправлены!");
                 ClearData();
             }
-        }
-
-        private void ShowCardTypeLogo(string cardNumber)
-        {
-            string logoPath = GetCardLogoPath(cardNumber);
-            if (logoPath != null)
-            {
-                CardTypeLogo.Source = new BitmapImage(new Uri(logoPath, UriKind.Relative));
-                CardTypeLogo.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                CardTypeLogo.Visibility = Visibility.Collapsed;
-            }
-        }
-
-        private void CardNumberTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            ShowCardTypeLogo(CardNumberTextBox.Text);
-        }
-
-        private string GetCardLogoPath(string cardNumber)
-        {
-            if (IsVisa(cardNumber))
-                return "Resources/Cards/visa.png";
-            else if (IsMasterCard(cardNumber))
-                return "Resources/Cards/mastercard.png";
-            else if (IsMir(cardNumber)) 
-                return "Resources/Cards/mir.png";
-            else
-                return null;
-        }
-
-        private bool IsMir(string cardNumber)
-        {
-            return cardNumber.StartsWith("2200") && cardNumber.Length == 16;
-        }
-
-
-        private bool IsVisa(string cardNumber)
-        {
-            return cardNumber.StartsWith("4") && cardNumber.Length == 16;
-        }
-
-        private bool IsMasterCard(string cardNumber)
-        {
-            return (cardNumber.StartsWith("51") || cardNumber.StartsWith("52") || cardNumber.StartsWith("53") ||
-                    cardNumber.StartsWith("54") || cardNumber.StartsWith("55")) && cardNumber.Length == 16;
         }
 
         private bool ValidateInputs()
         {
             if (HorseComboBox.SelectedItem == null)
             {
-                MessageBox.Show("Пожалуйста, выберите лошадь.");
+                MessageBox.Show("Пожалуйста, выберите лошадь.", "Ошибка ввода", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return false;
             }
 
             if (!decimal.TryParse(DonationAmountTextBox.Text, out decimal donationAmount) || donationAmount <= 0)
             {
-                MessageBox.Show("Пожалуйста, введите корректную сумму пожертвования.");
+                MessageBox.Show("Пожалуйста, введите корректную сумму пожертвования.", "Ошибка ввода", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return false;
             }
 
             string cardNumber = CardNumberTextBox.Text;
             if (!IsValidCardNumber(cardNumber))
             {
-                MessageBox.Show("Некорректный номер банковской карты. Должно быть 16 цифр.");
+                MessageBox.Show("Некорректный номер банковской карты. Должно быть 16 цифр.", "Ошибка карты", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
             if (MonthComboBox.SelectedItem == null || YearComboBox.SelectedItem == null)
             {
-                MessageBox.Show("Пожалуйста, выберите срок действия карты.");
+                MessageBox.Show("Пожалуйста, выберите срок действия карты.", "Ошибка ввода", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return false;
             }
 
             if (string.IsNullOrWhiteSpace(FullNameTextBox.Text))
             {
-                MessageBox.Show("Пожалуйста, введите фамилию и имя отправителя.");
-                return false;
-            }
-            string cvvText = CVVTextBox.Text;
-            if (!Regex.IsMatch(cvvText, @"^\d{3}$"))
-            {
-                MessageBox.Show("Некорректный CVV2 код. Должно быть 3 цифры.");
+                MessageBox.Show("Пожалуйста, введите фамилию и имя отправителя.", "Ошибка ввода", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return false;
             }
 
+            string cvvText = CVVTextBox.Text;
+            if (!Regex.IsMatch(cvvText, @"^\d{3}$"))
+            {
+                MessageBox.Show("Некорректный CVV2 код. Должно быть 3 цифры.", "Ошибка CVV", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+
+            MessageBox.Show("Все данные корректны!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
             return true;
         }
+
 
         private bool IsValidCardNumber(string cardNumber)
         {

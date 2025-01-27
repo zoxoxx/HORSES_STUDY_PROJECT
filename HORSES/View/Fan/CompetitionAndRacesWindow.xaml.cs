@@ -55,9 +55,9 @@ namespace HORSES.View.Fan
             if (DG_RACES.SelectedItem is null)
                 return;
 
-            if (mode == false)
-            { 
-                MessageBox.Show("Это забеги!");
+            if (!mode)
+            {
+                MessageBox.Show("Это забеги!", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
 

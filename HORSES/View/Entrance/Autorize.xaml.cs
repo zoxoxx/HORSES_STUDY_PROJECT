@@ -29,21 +29,24 @@ namespace HORSES.View.Entrance
 
         private async void BTN_VHOD_Click(object sender, RoutedEventArgs e)
         {
-            if (TB_LOGIN.Text == String.Empty || TB_PASSWORD.Text == String.Empty)
+            if (string.IsNullOrWhiteSpace(TB_LOGIN.Text) || string.IsNullOrWhiteSpace(TB_PASSWORD.Text))
             {
-                MessageBox.Show("Заполните данные для авторизации!");
+                MessageBox.Show("Заполните данные для авторизации!", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+
             UserI? user = await AutorizeController.Autorize(TB_LOGIN.Text, TB_PASSWORD.Text);
             if (user == null)
             {
-                MessageBox.Show("Пользователь отсутствует в системе.");
+                MessageBox.Show("Пользователь отсутствует в системе.", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+
             MainUserWindow window = new MainUserWindow(user);
             this.Close();
             window.Show();
         }
+
 
         private async void BTN_FAN_Click(object sender, RoutedEventArgs e)
         {

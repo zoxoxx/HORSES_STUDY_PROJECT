@@ -51,5 +51,12 @@ namespace HORSES.View.Fan
             this.Close();
             window.Show();
         }
+
+        private void BTN_RESULT_Click(object sender, RoutedEventArgs e)
+        {
+            ResultWindow window = new ResultWindow();
+            this.Close();
+            window.Show();
+        }
     }
 }

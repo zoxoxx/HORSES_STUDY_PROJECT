@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HORSES.View.Fan;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,39 @@ namespace HORSES.View.Entrance.MainPages
         public MainJockeyPage()
         {
             InitializeComponent();
+        }
+
+        private void Information_Jockey_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Information_Horse_Clickkj(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Registration_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Information_Participants_Click(object sender, RoutedEventArgs e)
+        {
+            CompetitionAndRacesWindow window = new CompetitionAndRacesWindow(true);
+            window.Show();
+        }
+
+        private void Viewing_Results_Click(object sender, RoutedEventArgs e)
+        {
+            ResultWindow window = new ResultWindow();
+            window.Show();
+        }
+
+        private void BTN_BACK_MAIN_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow window = new MainWindow();
+            window.Show();
         }
     }
 }
