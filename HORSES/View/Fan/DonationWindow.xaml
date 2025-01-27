@@ -1,7 +1,8 @@
 ﻿<Window x:Class="HORSES.View.Fan.DonationWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Пожертвования" Height="470" Width="800" WindowStartupLocation="CenterScreen" Loaded="DonationWindow_Loaded">
+        xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Пожертвования" Height="490" Width="800" WindowStartupLocation="CenterScreen" Loaded="DonationWindow_Loaded">
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -10,30 +11,28 @@
 
         <StackPanel Grid.Row="0" Margin="0,10">
             <StackPanel Orientation="Horizontal" Margin="0,10">
+                <material:PackIcon Kind="Horse" Width="30" Height="30" VerticalAlignment="Center" Margin="5,0"/>
                 <Label Content="Кличка лошади:" Width="200" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#333"/>
                 <ComboBox x:Name="HorseComboBox" DisplayMemberPath="Nickname" Width="250" Padding="5"
                           BorderBrush="#007ACC" BorderThickness="2" Background="White" FontSize="14"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,10">
+                <material:PackIcon Kind="Cash" Width="30" Height="30" VerticalAlignment="Center" Margin="5,0"/>
                 <Label Content="Сумма пожертвования:" Width="200" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#333"/>
                 <TextBox x:Name="DonationAmountTextBox" Width="250" Padding="5"
                          BorderBrush="#007ACC" BorderThickness="2" Background="White" FontSize="14"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,10">
+                <material:PackIcon Kind="CreditCard" Width="30" Height="30" VerticalAlignment="Center" Margin="5,0"/>
                 <Label Content="Номер карты:" Width="200" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#333"/>
                 <TextBox x:Name="CardNumberTextBox" Width="250" MaxLength="16" Padding="5"
-                     BorderBrush="#007ACC" BorderThickness="2" Background="White" FontSize="14"
-                     TextChanged="CardNumberTextBox_TextChanged"/>
+                         BorderBrush="#007ACC" BorderThickness="2" Background="White" FontSize="14"/>
             </StackPanel>
-
+           
             <StackPanel Orientation="Horizontal" Margin="0,10">
-                <Image x:Name="CardTypeLogo" Width="100" Height="60" Margin="10,0" Visibility="Collapsed" VerticalAlignment="Center"/>
-            </StackPanel>
-
-
-            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <material:PackIcon Kind="Calendar" Width="30" Height="30" VerticalAlignment="Center" Margin="5,0"/>
                 <Label Content="Срок действия (ММГГ):" Width="200" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#333"/>
                 <ComboBox x:Name="MonthComboBox" Width="125" Padding="5" 
                           BorderBrush="#007ACC" BorderThickness="2" Background="White" FontSize="14">
@@ -60,12 +59,14 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,10">
+                <material:PackIcon Kind="Account" Width="30" Height="30" VerticalAlignment="Center" Margin="5,0"/>
                 <Label Content="Фамилия и имя:" Width="200" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#333"/>
                 <TextBox x:Name="FullNameTextBox" Width="250" Padding="5"
                          BorderBrush="#007ACC" BorderThickness="2" Background="White" FontSize="14"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,10">
+                <material:PackIcon Kind="Lock" Width="30" Height="30" VerticalAlignment="Center" Margin="5,0"/>
                 <Label Content="CVV2 код:" Width="200" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#333"/>
                 <TextBox x:Name="CVVTextBox" Width="250" MaxLength="3" Padding="5"
                          BorderBrush="#007ACC" BorderThickness="2" Background="White" FontSize="14"/>
@@ -73,7 +74,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
-            <Button Content="Отправить" Width="150" Height="45" Margin="10,0" Click="SubmitButton_Click">
+            <Button Width="50" Height="45" Margin="10,0" Click="SubmitButton_Click">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#007ACC"/>
@@ -92,7 +93,10 @@
                             <Setter.Value>
                                 <ControlTemplate TargetType="Button">
                                     <Border Background="{TemplateBinding Background}" CornerRadius="10" Padding="{TemplateBinding Padding}">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                            <material:PackIcon Kind="Send" Width="24" Height="24" Margin="5,0"/>
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </StackPanel>
                                     </Border>
                                 </ControlTemplate>
                             </Setter.Value>
@@ -107,9 +111,10 @@
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
+                <TextBlock Text="Отправить" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
 
-            <Button Content="Вернуться" Width="150" Height="45" Margin="10,0" Click="ReturnButton_Click">
+            <Button Width="50" Height="45" Margin="10,0" Click="ReturnButton_Click">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#555"/>
@@ -128,7 +133,10 @@
                             <Setter.Value>
                                 <ControlTemplate TargetType="Button">
                                     <Border Background="{TemplateBinding Background}" CornerRadius="10" Padding="{TemplateBinding Padding}">
-                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                            <material:PackIcon Kind="ArrowBack" Width="24" Height="24" Margin="5,0"/>
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </StackPanel>
                                     </Border>
                                 </ControlTemplate>
                             </Setter.Value>
@@ -143,6 +151,7 @@
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
+                <TextBlock Text="Вернуться" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Button>
         </StackPanel>
     </Grid>

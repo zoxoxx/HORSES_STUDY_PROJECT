@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HORSES.View.Fan"
         mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Соревнования и Забеги" Height="1080" Width="1920" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
     <Grid Loaded="Grid_Loaded" Background="#EFEFEF">
@@ -19,25 +20,23 @@
             <RowDefinition Height="220"/>
         </Grid.RowDefinitions>
 
-        <Label HorizontalAlignment="Center"
-       VerticalAlignment="Center"
-       Content="Соревнования"
-       FontSize="24"
-       FontWeight="Bold"
-       Foreground="#333"
-       Margin="10"
-       Grid.Row="0"
-       Grid.Column="0"/>
+        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="#333" Margin="10">
+            <Label.Content>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon Kind="Trophy" Width="24" Height="24" VerticalAlignment="Center" Margin="5"/>
+                    <TextBlock Text="Соревнования" VerticalAlignment="Center" />
+                </StackPanel>
+            </Label.Content>
+        </Label>
 
-        <Label HorizontalAlignment="Center"
-       VerticalAlignment="Center"
-       Content="Забеги"
-       FontSize="24"
-       FontWeight="Bold"
-       Foreground="#333"
-       Margin="10"
-       Grid.Row="0"
-       Grid.Column="1"/>
+        <Label Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="#333" Margin="10">
+            <Label.Content>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon Kind="Run" Width="24" Height="24" VerticalAlignment="Center" Margin="5"/>
+                    <TextBlock Text="Забеги" VerticalAlignment="Center" />
+                </StackPanel>
+            </Label.Content>
+        </Label>
 
         <DataGrid Name="DG_COMPETITIONS" 
                   HorizontalContentAlignment="Center" 
