@@ -59,8 +59,8 @@ namespace HORSES.View.Entrance.MainPages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ResultWindow window = new ResultWindow();
-            window.Show();
+            //ResultWindow window = new ResultWindow();
+            //window.Show();
         }
 
         private void Information_Participants_Click(object sender, RoutedEventArgs e)

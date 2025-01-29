@@ -37,6 +37,7 @@ namespace HORSES.View.Fan
         private async void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             competitions = await AllRaces();
+            DG_COMPETITIONS.ItemsSource = competitions;
         }
 
         private async Task<ObservableCollection<Competition>> AllRaces() => new ObservableCollection<Competition>(await App.db.Competitions.ToListAsync());
@@ -48,6 +49,7 @@ namespace HORSES.View.Fan
 
             var selectedItem = DG_COMPETITIONS.SelectedItem as Competition;
             races = await CompetitionsAndRacesController.CurrentRaceForCompetition(selectedItem);
+            DG_RACES.ItemsSource = races;
         }
 
         private async void DG_RACES_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -60,8 +62,16 @@ namespace HORSES.View.Fan
                 MessageBox.Show("Это забеги!", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
-
             var selectedItem = DG_RACES.SelectedItem as CheckIn;
+            MessageBoxResult result = MessageBox.Show("Посмотреть результаты?\nНет - участников.", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                ResultWindow windowR = new ResultWindow(selectedItem);
+                this.Hide();
+                windowR.Show();
+            }
+
             ParticipantsRaceWindow window = new ParticipantsRaceWindow(selectedItem);
             this.Hide();
             window.Show();

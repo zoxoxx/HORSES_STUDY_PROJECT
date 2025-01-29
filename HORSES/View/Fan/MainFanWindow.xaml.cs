@@ -54,7 +54,7 @@ namespace HORSES.View.Fan
 
         private void BTN_RESULT_Click(object sender, RoutedEventArgs e)
         {
-            ResultWindow window = new ResultWindow();
+            CompetitionAndRacesWindow window = new CompetitionAndRacesWindow(true);
             this.Close();
             window.Show();
         }

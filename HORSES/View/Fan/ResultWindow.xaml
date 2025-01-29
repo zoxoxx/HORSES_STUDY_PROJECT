@@ -50,15 +50,13 @@
             <TextBlock Text="Результаты заезда" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" />
         </StackPanel>
 
-        <DataGrid Grid.Row="1" Name="RESULTS" Style="{StaticResource CustomDataGridStyle}">
+        <DataGrid Grid.Row="1" Name="DG_RESULT" Style="{StaticResource CustomDataGridStyle}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Фамилия наездника" Width="*" Binding="{Binding CheckInId}" />
-                <DataGridTextColumn Header="Имя скакуна" Width="*" Binding="{Binding Indicator}"/>
-                <DataGridTextColumn Header="Порода" Width="*" Binding="{Binding Result}"/>
-                <DataGridTextColumn Header="Цвет экипировки" Width="*" Binding="{Binding ParticipantId}"/>
-                <DataGridTextColumn Header="Время финиша" Width="*" Binding="{Binding TimeEnd}"/>
-                <DataGridTextColumn Header="Статус проверки" Width="*" Binding="{Binding CheckIn}"/>
-                <DataGridTextColumn Header="Идентификатор участника" Width="*" Binding="{Binding Participant}"/>
+                <DataGridTextColumn Header="Фамилия наездника" Width="*" Binding="{Binding PHYO}" />
+                <DataGridTextColumn Header="Имя скакуна" Width="*" Binding="{Binding NameSkak}"/>
+                <DataGridTextColumn Header="Порода" Width="*" Binding="{Binding Poroda}"/>
+                <DataGridTextColumn Header="Цвет экипировки" Width="*" Binding="{Binding ColorClothes}"/>
+                <DataGridTextColumn Header="Время финиша" Width="*" Binding="{Binding TimeFinish }"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
