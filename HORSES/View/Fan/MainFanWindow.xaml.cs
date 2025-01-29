@@ -38,21 +38,21 @@ namespace HORSES.View.Fan
             window.Show();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
             CompetitionAndRacesWindow window = new CompetitionAndRacesWindow(true);
             this.Close();
             window.Show();
         }
 
-        private void BTN_DONATION_Click(object sender, RoutedEventArgs e)
+        private async void BTN_DONATION_Click(object sender, RoutedEventArgs e)
         {
             DonationWindow window = new DonationWindow();
             this.Close();
             window.Show();
         }
 
-        private void BTN_RESULT_Click(object sender, RoutedEventArgs e)
+        private async void BTN_RESULT_Click(object sender, RoutedEventArgs e)
         {
             CompetitionAndRacesWindow window = new CompetitionAndRacesWindow(true);
             this.Close();
