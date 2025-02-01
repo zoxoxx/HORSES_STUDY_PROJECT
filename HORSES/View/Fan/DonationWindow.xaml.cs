@@ -87,6 +87,10 @@ namespace HORSES.View.Fan
             }
 
             MessageBox.Show("Все данные корректны!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            App.db.Donations.Add(new Donation(Convert.ToInt32(DonationAmountTextBox.Text), Convert.ToInt32(HorseComboBox.SelectedValue)));
+            App.db.SaveChanges();
+
             return true;
         }
 
