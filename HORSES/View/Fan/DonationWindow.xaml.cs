@@ -22,17 +22,15 @@ namespace HORSES.View.Fan
     /// </summary>
     public partial class DonationWindow : Window
     {
-        private readonly HorseCompetitionsContext _context;
 
         public DonationWindow()
         {
             InitializeComponent();
-            _context = new HorseCompetitionsContext();
         }
 
         private void DonationWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Horse> horses = _context.Horses.ToList();
+            List<Horse> horses = App.db.Horses.ToList();
 
             HorseComboBox.ItemsSource = horses;
             HorseComboBox.DisplayMemberPath = "Name";
