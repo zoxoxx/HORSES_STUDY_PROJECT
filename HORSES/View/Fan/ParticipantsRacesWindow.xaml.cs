@@ -32,7 +32,7 @@ namespace HORSES.View.Fan
         private async void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             this.Title += " " + currentRace.SequenceNumber.ToString();
-            DG_PARTICIPANTS.DataContext = await CurrentParticipants();
+            DG_PARTICIPANTS.ItemsSource = await CurrentParticipants();
         }
 
         private async Task<ObservableCollection<object>> CurrentParticipants()

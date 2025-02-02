@@ -12,4 +12,15 @@ public partial class Donation
     public int? HorseId { get; set; }
 
     public virtual Horse? Horse { get; set; }
+
+    public Donation (int DonationSumm, int HorseId)
+    {
+        this.DonationSumm = DonationSumm;
+        this.HorseId = HorseId;
+    }
+
+    public Donation()
+    {
+
+    }
 }

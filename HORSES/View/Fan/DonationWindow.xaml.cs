@@ -22,17 +22,15 @@ namespace HORSES.View.Fan
     /// </summary>
     public partial class DonationWindow : Window
     {
-        private readonly HorseCompetitionsContext _context;
 
         public DonationWindow()
         {
             InitializeComponent();
-            _context = new HorseCompetitionsContext();
         }
 
         private void DonationWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Horse> horses = _context.Horses.ToList();
+            List<Horse> horses = App.db.Horses.ToList();
 
             HorseComboBox.ItemsSource = horses;
             HorseComboBox.DisplayMemberPath = "Name";
@@ -89,6 +87,10 @@ namespace HORSES.View.Fan
             }
 
             MessageBox.Show("Все данные корректны!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            App.db.Donations.Add(new Donation(Convert.ToInt32(DonationAmountTextBox.Text), Convert.ToInt32(HorseComboBox.SelectedValue)));
+            App.db.SaveChanges();
+
             return true;
         }
 
