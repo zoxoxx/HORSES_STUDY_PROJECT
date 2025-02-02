@@ -6,7 +6,7 @@
         xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:HORSES.View.Entrance.JockeyWindows"
         mc:Ignorable="d"
-        Title="Регистрация на участие в заезде" Height="940" Width="600"
+        Title="Регистрация на участие в заезде" Height="400" Width="600"
         Background="#F0F4F8" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style TargetType="Button">
@@ -40,7 +40,7 @@
             <TextBlock.Inlines>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <material:PackIcon Kind="HorseVariant" Width="30" Height="30" Margin="0,0,10,0" VerticalAlignment="Center"/>
-                    <TextBlock x:Name="TitleTextBlock" Text="Профиль лошади" VerticalAlignment="Center"/>
+                    <TextBlock x:Name="TitleTextBlock" Text="Регистрация" VerticalAlignment="Center"/>
                 </StackPanel>
             </TextBlock.Inlines>
         </TextBlock>
@@ -48,45 +48,15 @@
         <StackPanel Grid.Row="1" Margin="20">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,10">
                 <material:PackIcon Kind="GenderMaleFemale" Width="24" Height="24" Foreground="#1E88E5" VerticalAlignment="Center"/>
-                <TextBlock Text="Пол:" FontSize="16" FontWeight="Medium" Foreground="#616161" VerticalAlignment="Center" Margin="10,0"/>
+                <TextBlock Text="Лошадь:" FontSize="16" FontWeight="Medium" Foreground="#616161" VerticalAlignment="Center" Margin="10,0"/>
             </StackPanel>
-            <ComboBox x:Name="GenderComboBox" Height="40" Margin="0,5" Padding="10" BorderBrush="#B0BEC5" BorderThickness="1" FontSize="14" VerticalAlignment="Center"/>
+            <ComboBox x:Name="HorseComboBox" Height="40" Margin="0,5" Padding="10" BorderBrush="#B0BEC5" BorderThickness="1" FontSize="14" VerticalAlignment="Center"/>
 
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,20,0,5">
-                <material:PackIcon Kind="Horse" Width="24" Height="24" Foreground="#1E88E5" VerticalAlignment="Center"/>
-                <TextBlock Text="Вид лошади:" FontSize="16" FontWeight="Medium" Foreground="#616161" VerticalAlignment="Center" Margin="10,0"/>
+                <material:PackIcon Kind="FlagCheckered" Width="24" Height="24" Foreground="#1E88E5" VerticalAlignment="Center"/>
+                <TextBlock Text="Состязание и заезд" FontSize="16" FontWeight="Medium" Foreground="#616161" VerticalAlignment="Center" Margin="10,0"/>
             </StackPanel>
-            <ComboBox x:Name="HorseTypeComboBox" Height="40" Margin="0,5" Padding="10" BorderBrush="#B0BEC5" BorderThickness="1" FontSize="14" VerticalAlignment="Center"/>
-
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,20,0,5">
-                <material:PackIcon Kind="AccountTie" Width="24" Height="24" Foreground="#1E88E5" VerticalAlignment="Center"/>
-                <TextBlock Text="Тренер:" FontSize="16" FontWeight="Medium" Foreground="#616161" VerticalAlignment="Center" Margin="10,0"/>
-            </StackPanel>
-            <TextBox x:Name="TrainerTextBox" Height="40" Margin="0,5" Padding="10" BorderBrush="#B0BEC5" BorderThickness="1" FontSize="14" VerticalAlignment="Center"/>
-
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,20,0,5">
-                <material:PackIcon Kind="Identifier" Width="24" Height="24" Foreground="#1E88E5" VerticalAlignment="Center"/>
-                <TextBlock Text="Идентификатор тренера:" FontSize="16" FontWeight="Medium" Foreground="#616161" VerticalAlignment="Center" Margin="10,0"/>
-            </StackPanel>
-            <TextBox x:Name="TrainerIdTextBox" Height="40" Margin="0,5" Padding="10" BorderBrush="#B0BEC5" BorderThickness="1" FontSize="14" VerticalAlignment="Center"/>
-
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,20,0,5">
-                <material:PackIcon Kind="Horse" Width="24" Height="24" Foreground="#1E88E5" VerticalAlignment="Center"/>
-                <TextBlock Text="Имя лошади:" FontSize="16" FontWeight="Medium" Foreground="#616161" VerticalAlignment="Center" Margin="10,0"/>
-            </StackPanel>
-            <TextBox x:Name="HorseNameTextBox" Height="40" Margin="0,5" Padding="10" BorderBrush="#B0BEC5" BorderThickness="1" FontSize="14" VerticalAlignment="Center"/>
-
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,20,0,5">
-                <material:PackIcon Kind="Cake" Width="24" Height="24" Foreground="#1E88E5" VerticalAlignment="Center"/>
-                <TextBlock Text="Дата рождения:" FontSize="16" FontWeight="Medium" Foreground="#616161" VerticalAlignment="Center" Margin="10,0"/>
-            </StackPanel>
-            <DatePicker Margin="0,5" Padding="10" BorderBrush="#B0BEC5" BorderThickness="1" FontSize="14" VerticalAlignment="Center" />
-
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,20,0,5">
-                <material:PackIcon Kind="Cake" Width="24" Height="24" Foreground="#1E88E5" VerticalAlignment="Center"/>
-                <TextBlock x:Name="txt" Text="Плацебо:" FontSize="16" FontWeight="Medium" Foreground="#616161" VerticalAlignment="Center" Margin="10,0"/>
-            </StackPanel>
-            <TextBox Height="40" Margin="0,5" Padding="10" BorderBrush="#B0BEC5" BorderThickness="1" FontSize="14" VerticalAlignment="Center" />
+            <ComboBox x:Name="CompetitionRaceComboBox" Height="40" Margin="0,5" Padding="10" BorderBrush="#B0BEC5" BorderThickness="1" FontSize="14" VerticalAlignment="Center"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,20">
