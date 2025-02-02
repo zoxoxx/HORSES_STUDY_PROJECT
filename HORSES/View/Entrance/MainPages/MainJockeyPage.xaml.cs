@@ -1,4 +1,5 @@
-﻿using HORSES.View.Fan;
+﻿using HORSES.View.Entrance.JockeyWindows;
+using HORSES.View.Fan;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,12 +29,14 @@ namespace HORSES.View.Entrance.MainPages
 
         private void Information_Jockey_Click(object sender, RoutedEventArgs e)
         {
-
+            JockeyProfileWindow window = new JockeyProfileWindow();
+            window.ShowDialog();
         }
 
         private void Information_Horse_Clickkj(object sender, RoutedEventArgs e)
         {
-
+            HorseWindow window = new HorseWindow();
+            window.ShowDialog();
         }
 
         private void Registration_Click(object sender, RoutedEventArgs e)

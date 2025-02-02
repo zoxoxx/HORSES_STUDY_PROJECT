@@ -41,7 +41,7 @@ namespace HORSES
 
         private async void BTN_INFORMATION_Click(object sender, RoutedEventArgs e)
         {
-            HorseWindow window = new HorseWindow();
+            StartInfoWindow window = new StartInfoWindow();
             window.ShowDialog();
         }
     }
