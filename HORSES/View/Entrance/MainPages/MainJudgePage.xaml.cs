@@ -40,7 +40,7 @@ namespace HORSES.View.Entrance.MainPages
 
         private void Viewing_Check_Results_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void Violations_Click(object sender, RoutedEventArgs e)
@@ -51,7 +51,8 @@ namespace HORSES.View.Entrance.MainPages
 
         private void Report_Click(object sender, RoutedEventArgs e)
         {
-
+            ArrivalReportWindow window = new ArrivalReportWindow();
+            window.Show();
         }
 
         private void BTN_BACK_MAIN_Click(object sender, RoutedEventArgs e)
