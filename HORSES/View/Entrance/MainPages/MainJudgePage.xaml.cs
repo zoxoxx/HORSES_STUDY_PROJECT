@@ -45,7 +45,8 @@ namespace HORSES.View.Entrance.MainPages
 
         private void Violations_Click(object sender, RoutedEventArgs e)
         {
-
+            ViolationsWindow window = new ViolationsWindow();
+            window.Show();
         }
 
         private void Report_Click(object sender, RoutedEventArgs e)

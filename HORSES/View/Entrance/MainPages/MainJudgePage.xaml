@@ -52,7 +52,7 @@
                                 <TextBlock Text="Просмотр результатов заезда" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
-                        <Button Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold">
+                        <Button Width="300" Height="50" Margin="5" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Click="Violations_Click">
                             <StackPanel Orientation="Horizontal">
                                 <material:PackIcon Kind="Warning" Width="24" Height="24" Margin="5"/>
                                 <TextBlock Text="Нарушениях участников" VerticalAlignment="Center"/>
