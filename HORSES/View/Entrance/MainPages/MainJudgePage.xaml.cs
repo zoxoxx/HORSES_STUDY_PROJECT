@@ -1,4 +1,5 @@
-﻿using HORSES.View.Fan;
+﻿using HORSES.View.Entrance.JudgeWindows;
+using HORSES.View.Fan;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,8 @@ namespace HORSES.View.Entrance.MainPages
 
         private void Track_Assignment_Click(object sender, RoutedEventArgs e)
         {
-
+            TrackAssignmentWindow window = new TrackAssignmentWindow();
+            window.Show();
         }
 
         private void Viewing_Information_About_Participants_Click(object sender, RoutedEventArgs e)
