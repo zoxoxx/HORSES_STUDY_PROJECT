@@ -33,14 +33,10 @@ namespace HORSES.View.Entrance.MainPages
             window.Show();
         }
 
-        private void Viewing_Information_About_Participants_Click(object sender, RoutedEventArgs e)
+        private void Check_in_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Viewing_Check_Results_Click(object sender, RoutedEventArgs e)
-        {
-            
+           /* ResultWindow window = new ResultWindow();
+            window.Show();*/
         }
 
         private void Violations_Click(object sender, RoutedEventArgs e)
