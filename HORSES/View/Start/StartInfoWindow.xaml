@@ -5,11 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HORSES.View"
         xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:sf="clr-namespace:WpfSnowfall;assembly=WpfSnowfall"
         mc:Ignorable="d"
         Title="О приложении" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
 
     <Grid Background="#F0F0F0">
-        <Border CornerRadius="20" Background="White" Padding="20" Margin="10">
+        
+        <Border CornerRadius="20" Background="CornflowerBlue" Padding="20" Margin="10">
             <StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
                     <material:PackIcon Kind="Information" Width="30" Height="30" VerticalAlignment="Center" Margin="0,0,10,0"/>
@@ -19,7 +21,15 @@
                                Foreground="#333333" 
                                VerticalAlignment="Center"/>
                 </StackPanel>
-
+                
+                <sf:Snowfall
+                    EmissionRate="5"
+                    Fill="White"
+                    ScaleFactor="1.6"
+                    OpacityFactor="1"
+                    ParticleSpeed="1" 
+                />
+                
                 <TextBlock HorizontalAlignment="Center" Margin="0,0,0,10">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <material:PackIcon Kind="Trophy" Width="30" Height="30" VerticalAlignment="Center" Margin="0,5,10,0" Foreground="Gold"/>
