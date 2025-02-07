@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HORSES.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,8 +21,10 @@ namespace HORSES.View.Entrance.JockeyWindows
     /// </summary>
     public partial class JockeyProfileWindow : Window
     {
-        public JockeyProfileWindow()
+        UserI MyUser { get; set; }
+        public JockeyProfileWindow(UserI MyUser = null)
         {
+            this.MyUser = MyUser;
             InitializeComponent();
         }
 
@@ -31,7 +35,32 @@ namespace HORSES.View.Entrance.JockeyWindows
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Данные успешно сохранены!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+            if (this.MyUser != null)
+            {
+                DateOnly date = DateOnly.Parse(DP_BIRTHDAY.Text);
+                MyUser.Birthday = date;
+                string[] PHYO = MyUser.Phyo.Split(' ');
+                MyUser.Phyo = TB_LASTNAME.Text + " " + TB_NAME.Text + " " + PHYO[2];
+                UserI? dbUser = App.db.UserIs
+                    .Where(user => user.Id == MyUser.Id)
+                    .FirstOrDefault();
+                if (dbUser != null)
+                {
+                    dbUser = MyUser;
+                    App.db.SaveChanges();
+                    MessageBox.Show("Данные успешно сохранены!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            DP_BIRTHDAY.Text = MyUser.Birthday.ToString();
+            string[] PHYO = MyUser.Phyo.Split(' ');
+            if (PHYO.Length > 0)
+                TB_NAME.Text = PHYO[1];
+
+            TB_LASTNAME.Text = PHYO[0];
         }
     }
 }

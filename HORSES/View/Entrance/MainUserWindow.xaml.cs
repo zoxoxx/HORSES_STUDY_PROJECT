@@ -20,19 +20,19 @@ namespace HORSES.View.Entrance
     /// </summary>
     public partial class MainUserWindow : Window
     {
-        UserI currentUser = null; 
+       public static UserI CurrentUser = null; 
         public MainUserWindow(UserI currentUser)
         {
             InitializeComponent();
-            this.currentUser = currentUser;
+            MainUserWindow.CurrentUser = currentUser;
         }
 
         private async void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            if (currentUser.RoleId == 1)
+            if (CurrentUser.RoleId == 1)
                 MainFrame.Navigate(new MainPages.MainJudgePage());
 
-            if (currentUser.RoleId == 2)
+            if (CurrentUser.RoleId == 2)
                 MainFrame.Navigate(new MainPages.MainJockeyPage());
         }
     }

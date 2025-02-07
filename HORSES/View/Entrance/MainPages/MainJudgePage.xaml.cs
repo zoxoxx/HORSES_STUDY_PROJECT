@@ -54,6 +54,10 @@ namespace HORSES.View.Entrance.MainPages
         private void BTN_BACK_MAIN_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();
+            Window currentWindow = Window.GetWindow(this);
+            if (currentWindow != null)
+                currentWindow.Close();
+
             window.Show();
         }
 

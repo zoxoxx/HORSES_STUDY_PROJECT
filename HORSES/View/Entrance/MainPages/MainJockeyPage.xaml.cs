@@ -1,4 +1,5 @@
-﻿using HORSES.View.Fan;
+﻿using HORSES.View.Entrance.JockeyWindows;
+using HORSES.View.Fan;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,8 @@ namespace HORSES.View.Entrance.MainPages
 
         private void Information_Jockey_Click(object sender, RoutedEventArgs e)
         {
-
+            JockeyProfileWindow profileWindow = new JockeyProfileWindow(MainUserWindow.CurrentUser);
+            profileWindow.ShowDialog();
         }
 
         private void Information_Horse_Clickkj(object sender, RoutedEventArgs e)
@@ -56,6 +58,10 @@ namespace HORSES.View.Entrance.MainPages
         private void BTN_BACK_MAIN_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();
+            Window currentWindow = Window.GetWindow(this);
+            if (currentWindow != null)
+                currentWindow.Close();
+
             window.Show();
         }
     }
