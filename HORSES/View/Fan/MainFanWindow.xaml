@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HORSES.View.Fan"
         xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Главное окно болельщика" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Главное окно болельщика" Height="470" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="AliceBlue" Margin="10">
 
         <Border BorderBrush="DarkGray" BorderThickness="2" CornerRadius="15">
