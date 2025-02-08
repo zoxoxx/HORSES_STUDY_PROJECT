@@ -30,7 +30,7 @@ namespace HORSES.View.Entrance.JockeyWindows
             SetTitle(mode);
         }
 
-        private void SetTitle(Mode mode)
+        private async void SetTitle(Mode mode)
         {
             if (mode == Mode.Create)
             {
@@ -43,12 +43,12 @@ namespace HORSES.View.Entrance.JockeyWindows
         }
 
 
-        private void Save_Click(object sender, RoutedEventArgs e)
+        private async void Save_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Close_Click(object sender, RoutedEventArgs e)
+        private async void Close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

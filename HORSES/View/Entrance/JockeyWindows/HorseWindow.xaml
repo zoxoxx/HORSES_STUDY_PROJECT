@@ -30,7 +30,7 @@
         </Style>
     </Window.Resources>
 
-    <Grid Background="#E1F5FE">
+    <Grid Background="#E1F5FE" Loaded="Grid_Loaded">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -58,7 +58,7 @@
             </StackPanel>
         </DockPanel>
 
-        <DataGrid Grid.Row="1" Name="RESULTS" Style="{StaticResource CustomDataGridStyle}">
+        <DataGrid Grid.Row="1" Name="DG_HORSES" Style="{StaticResource CustomDataGridStyle}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Пол" Width="*" Binding="{Binding GenderId}" />
                 <DataGridTextColumn Header="Вид лодаши" Width="*" Binding="{Binding TypId}"/>

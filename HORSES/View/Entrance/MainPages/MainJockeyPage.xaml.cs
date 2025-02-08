@@ -35,7 +35,8 @@ namespace HORSES.View.Entrance.MainPages
 
         private void Information_Horse_Clickkj(object sender, RoutedEventArgs e)
         {
-
+            HorseWindow horseWindow = new HorseWindow();
+            horseWindow.ShowDialog();
         }
 
         private void Registration_Click(object sender, RoutedEventArgs e)

@@ -24,16 +24,21 @@ namespace HORSES.View.Entrance.JockeyWindows
             InitializeComponent();
         }
 
-        private void Add_Click(object sender, RoutedEventArgs e)
+        private async void Add_Click(object sender, RoutedEventArgs e)
         {
             HorseDialogWindow createWindow = new HorseDialogWindow(HorseDialogWindow.Mode.Create);
             createWindow.ShowDialog();
         }
 
-        private void Edit_Click(object sender, RoutedEventArgs e)
+        private async void Edit_Click(object sender, RoutedEventArgs e)
         {
             HorseDialogWindow editWindow = new HorseDialogWindow(HorseDialogWindow.Mode.Edit);
             editWindow.ShowDialog();
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

@@ -28,12 +28,12 @@ namespace HORSES.View.Entrance.JockeyWindows
             InitializeComponent();
         }
 
-        private void Close_Click(object sender, RoutedEventArgs e)
+        private async void Close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void Save_Click(object sender, RoutedEventArgs e)
+        private async void Save_Click(object sender, RoutedEventArgs e)
         {
             if (this.MyUser != null)
             {
@@ -53,7 +53,7 @@ namespace HORSES.View.Entrance.JockeyWindows
             }
         }
 
-        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        private async void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             DP_BIRTHDAY.Text = MyUser.Birthday.ToString();
             string[] PHYO = MyUser.Phyo.Split(' ');

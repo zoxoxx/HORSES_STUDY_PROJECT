@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace HORSES.Controller
 {
     internal class JockeyController
-    {
+    { 
     }
 }
