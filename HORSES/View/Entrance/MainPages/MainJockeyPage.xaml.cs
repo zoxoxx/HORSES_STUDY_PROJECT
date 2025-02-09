@@ -53,8 +53,8 @@ namespace HORSES.View.Entrance.MainPages
 
         private void Viewing_Results_Click(object sender, RoutedEventArgs e)
         {
-            //ResultWindow window = new ResultWindow();
-            //window.Show();
+            CompetitionAndRacesWindow window = new CompetitionAndRacesWindow(true);
+            window.Show();
         }
 
         private void BTN_BACK_MAIN_Click(object sender, RoutedEventArgs e)

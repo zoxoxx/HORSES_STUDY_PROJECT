@@ -1,4 +1,5 @@
 ﻿using HORSES.Models;
+using HORSES.View.Entrance;
 using HORSES.View.Entrance.JockeyWindows;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -31,6 +32,11 @@ namespace HORSES.View.Fan
         }
         private async void Grid_Loaded(object sender, RoutedEventArgs e)
         {
+            if (MainUserWindow.CurrentUser is null || MainUserWindow.CurrentUser.RoleId == 2 || MainUserWindow.CurrentUser.RoleId == 3)
+            {
+                BTN_ADD.Visibility = Visibility.Hidden;
+                BTN_EDIT.Visibility = Visibility.Hidden;
+            }
             DG_RESULT.ItemsSource = await CurrentResults();
         }
         private async Task<ObservableCollection<object>> CurrentResults()

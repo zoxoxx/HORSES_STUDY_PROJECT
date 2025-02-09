@@ -59,13 +59,13 @@
                 <TextBlock Text="Результаты заезда" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
-                <Button Style="{StaticResource CustomButtonStyle}" Margin="20,0,0,0" Click="Add_Click">
+                <Button Name="BTN_ADD" Style="{StaticResource CustomButtonStyle}" Margin="20,0,0,0" Click="Add_Click">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                         <material:PackIcon Kind="Plus" Width="20" Height="20" Margin="0,0,5,0" Foreground="Green"/>
                         <TextBlock Text="Добавить" />
                     </StackPanel>
                 </Button>
-                <Button Style="{StaticResource CustomButtonStyle}" Margin="10,0,0,0" Click="Edit_Click">
+                <Button Name="BTN_EDIT" Style="{StaticResource CustomButtonStyle}" Margin="10,0,0,0" Click="Edit_Click">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                         <material:PackIcon Kind="Pencil" Width="20" Height="20" Margin="0,0,5,0" Foreground="Orange"/>
                         <TextBlock Text="Редактировать" />
