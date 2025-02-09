@@ -70,6 +70,7 @@ namespace HORSES.View.Fan
                 ResultWindow windowR = new ResultWindow(selectedItem);
                 this.Hide();
                 windowR.Show();
+                return;
             }
 
             ParticipantsRaceWindow window = new ParticipantsRaceWindow(selectedItem);
