@@ -1,4 +1,5 @@
 ﻿using HORSES.Models;
+using HORSES.View.Entrance.JockeyWindows;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -70,6 +71,18 @@ namespace HORSES.View.Fan
 
 
             return new ObservableCollection<object>(resultList);
+        }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            HorseDialogWindow createWindow = new HorseDialogWindow(HorseDialogWindow.Mode.Create);
+            createWindow.ShowDialog();
+        }
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            HorseDialogWindow editWindow = new HorseDialogWindow(HorseDialogWindow.Mode.Edit);
+            editWindow.ShowDialog();
         }
     }
 }

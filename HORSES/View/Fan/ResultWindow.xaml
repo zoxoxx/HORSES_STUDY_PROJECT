@@ -36,6 +36,14 @@
             <Setter Property="Padding" Value="10"/>
             <Setter Property="FontSize" Value="14"/>
         </Style>
+
+        <Style TargetType="Button" x:Key="CustomButtonStyle">
+            <Setter Property="Background" Value="#1E88E5"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
     </Window.Resources>
 
     <Grid Loaded="Grid_Loaded" Background="#E1F5FE">
@@ -44,11 +52,27 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20">
-            <material:PackIcon Kind="Horse" Width="30" Height="30" Margin="0,0,10,0" Foreground="#1E88E5"/>
-            <TextBlock Text="Результаты заезда" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" />
-        </StackPanel>
+
+        <DockPanel Grid.Row="0" Margin="0,20">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" DockPanel.Dock="Top">
+                <material:PackIcon Kind="Horse" Width="30" Height="30" Margin="0,0,10,0" Foreground="#1E88E5"/>
+                <TextBlock Text="Результаты заезда" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+                <Button Style="{StaticResource CustomButtonStyle}" Margin="20,0,0,0" Click="Add_Click">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <material:PackIcon Kind="Plus" Width="20" Height="20" Margin="0,0,5,0" Foreground="Green"/>
+                        <TextBlock Text="Добавить" />
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource CustomButtonStyle}" Margin="10,0,0,0" Click="Edit_Click">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <material:PackIcon Kind="Pencil" Width="20" Height="20" Margin="0,0,5,0" Foreground="Orange"/>
+                        <TextBlock Text="Редактировать" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </DockPanel>
 
         <DataGrid Grid.Row="1" Name="DG_RESULT" Style="{StaticResource CustomDataGridStyle}">
             <DataGrid.Columns>

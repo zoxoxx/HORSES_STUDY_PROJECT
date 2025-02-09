@@ -1,4 +1,5 @@
-﻿using HORSES.View.Fan;
+﻿using HORSES.View.Entrance.JudgeWindows;
+using HORSES.View.Fan;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,27 +29,26 @@ namespace HORSES.View.Entrance.MainPages
 
         private void Track_Assignment_Click(object sender, RoutedEventArgs e)
         {
-
+            TrackAssignmentWindow window = new TrackAssignmentWindow();
+            window.Show();
         }
 
-        private void Viewing_Information_About_Participants_Click(object sender, RoutedEventArgs e)
+        private void Check_in_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Viewing_Check_Results_Click(object sender, RoutedEventArgs e)
-        {
-
+           /* ResultWindow window = new ResultWindow();
+            window.Show();*/
         }
 
         private void Violations_Click(object sender, RoutedEventArgs e)
         {
-
+            ViolationsWindow window = new ViolationsWindow();
+            window.Show();
         }
 
         private void Report_Click(object sender, RoutedEventArgs e)
         {
-
+            ArrivalReportWindow window = new ArrivalReportWindow();
+            window.Show();
         }
 
         private void BTN_BACK_MAIN_Click(object sender, RoutedEventArgs e)
