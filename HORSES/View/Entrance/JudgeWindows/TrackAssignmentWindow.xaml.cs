@@ -23,5 +23,15 @@ namespace HORSES.View.Entrance.JudgeWindows
         {
             InitializeComponent();
         }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
