@@ -60,13 +60,14 @@
 
         <DataGrid Grid.Row="1" Name="DG_HORSES" Style="{StaticResource CustomDataGridStyle}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Пол" Width="*" Binding="{Binding GenderId}" />
-                <DataGridTextColumn Header="Вид лодаши" Width="*" Binding="{Binding TypId}"/>
-                <DataGridTextColumn Header="Тренер" Width="*" Binding="{Binding PhyoTrener}"/>
-                <DataGridTextColumn Header="Тренер индификатор" Width="*" Binding="{Binding OwnerId}"/>
+                <DataGridTextColumn Header="Пол" Width="*" Binding="{Binding Gender}" />
+                <DataGridTextColumn Header="Вид лодаши" Width="*" Binding="{Binding TypHorse}"/>
+                <DataGridTextColumn Header="Тренер" Width="*" Binding="{Binding TrainerName}"/>
+                <DataGridTextColumn Header="Идентификатор тренера" Width="*" Binding="{Binding OwnerId}"/>
                 <DataGridTextColumn Header="День рождения" Width="*" Binding="{Binding Birthday}"/>
                 <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="Плацебо" Width="*" Binding="{Binding PlaceBirthId}"/>
+                <DataGridTextColumn Header="Место рождения" Width="*" Binding="{Binding Place}"/>
+                <DataGridTextColumn Header="ID_HORSE" Width="*" Binding="{Binding ID}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

@@ -32,4 +32,16 @@ public partial class Horse
     public virtual PlaceBirth? PlaceBirth { get; set; }
 
     public virtual TypHorse? Typ { get; set; }
+
+    public Horse() { }
+    public Horse( int? genderId, int? typId, string? phyoTrener, int? ownerId, DateOnly? birthday, string? name, int? placeBirthId)
+    {
+        GenderId = genderId;
+        TypId = typId;
+        PhyoTrener = phyoTrener;
+        OwnerId = ownerId;
+        Birthday = birthday;
+        Name = name;
+        PlaceBirthId = placeBirthId;
+    }
 }
