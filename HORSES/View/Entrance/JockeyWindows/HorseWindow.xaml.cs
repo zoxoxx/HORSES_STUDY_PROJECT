@@ -92,5 +92,10 @@ namespace HORSES.View.Entrance.JockeyWindows
                 })
                 .ToListAsync());
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

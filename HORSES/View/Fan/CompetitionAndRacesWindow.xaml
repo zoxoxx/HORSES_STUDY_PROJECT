@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:HORSES.View.Fan"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -111,5 +112,14 @@
                 <DataGridTextColumn Header="Время старта" Width="*" Binding="{Binding TimeStart}"/>
             </DataGrid.Columns>
         </DataGrid>
+
+        <Button Name="BTN_BACK" Click="Back_Click" Grid.Row="2" Grid.ColumnSpan="2" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Bottom" Background="#FF6699FF" Foreground="White" FontWeight="Bold" Width="350" Height="40" Margin="5"  >
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <material:PackIcon Kind="ArrowLeft" Width="20" Height="20" Margin="0,0,5,0"/>
+                <TextBlock Text="Вернуться" />
+            </StackPanel>
+        </Button>
     </Grid>
 </Window>
