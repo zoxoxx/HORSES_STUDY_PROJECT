@@ -35,19 +35,13 @@ namespace HORSES.View.Entrance.MainPages
 
         private void Check_in_Click(object sender, RoutedEventArgs e)
         {
-           /* ResultWindow window = new ResultWindow();
-            window.Show();*/
+            ResultDialog window = new ResultDialog(ResultDialog.Mode.Create);
+            window.Show();
         }
 
         private void Violations_Click(object sender, RoutedEventArgs e)
         {
             ViolationsWindow window = new ViolationsWindow();
-            window.Show();
-        }
-
-        private void Report_Click(object sender, RoutedEventArgs e)
-        {
-            ArrivalReportWindow window = new ArrivalReportWindow();
             window.Show();
         }
 
@@ -61,15 +55,15 @@ namespace HORSES.View.Entrance.MainPages
             window.Show();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //ResultWindow window = new ResultWindow();
-            //window.Show();
-        }
-
         private void Information_Participants_Click(object sender, RoutedEventArgs e)
         {
             CompetitionAndRacesWindow window = new CompetitionAndRacesWindow(true);
+            window.Show();
+        }
+
+        private void REPORT_BTN_Click(object sender, RoutedEventArgs e)
+        {
+            ArrivalReportWindow window = new ArrivalReportWindow();
             window.Show();
         }
     }

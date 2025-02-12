@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HORSES.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,13 +20,15 @@ namespace HORSES.View.Entrance.JudgeWindows
     /// </summary>
     public partial class ResultDialog : Window
     {
+        CheckIn? currentRace;
         public enum Mode
         {
             Create,
             Edit
         }
-        public ResultDialog(Mode mode)
+        public ResultDialog(Mode mode, CheckIn? currentRace = null)
         {
+            this.currentRace = currentRace;
             InitializeComponent();
             SetTitle(mode);
         }

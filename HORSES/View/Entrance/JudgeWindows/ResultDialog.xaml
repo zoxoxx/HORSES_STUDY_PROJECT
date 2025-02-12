@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:HORSES.View.Entrance.JudgeWindows"
         mc:Ignorable="d"
         Title="Окно результатов" Height="650" Width="600"
-        Background="#F0F4F8" WindowStartupLocation="CenterScreen">
+        Background="#F0F4F8" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
     <Window.Resources>
         <Style TargetType="Button">

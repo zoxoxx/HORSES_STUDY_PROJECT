@@ -31,7 +31,7 @@ namespace HORSES.View.Entrance.JudgeWindows
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

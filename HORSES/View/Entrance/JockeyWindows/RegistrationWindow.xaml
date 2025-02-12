@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:HORSES.View.Entrance.JockeyWindows"
         mc:Ignorable="d"
         Title="Регистрация на участие в заезде" Height="400" Width="600"
-        Background="#F0F4F8" WindowStartupLocation="CenterScreen">
+        Background="#F0F4F8" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="FontSize" Value="16"/>

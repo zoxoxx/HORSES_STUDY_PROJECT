@@ -81,14 +81,14 @@ namespace HORSES.View.Fan
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            HorseDialogWindow createWindow = new HorseDialogWindow(HorseDialogWindow.Mode.Create);
-            createWindow.ShowDialog();
+            //HorseDialogWindow createWindow = new HorseDialogWindow(HorseDialogWindow.Mode.Create);
+            //createWindow.ShowDialog();
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            HorseDialogWindow editWindow = new HorseDialogWindow(HorseDialogWindow.Mode.Edit);
-            editWindow.ShowDialog();
+            //HorseDialogWindow editWindow = new HorseDialogWindow(HorseDialogWindow.Mode.Edit);
+            //editWindow.ShowDialog();
         }
     }
 }

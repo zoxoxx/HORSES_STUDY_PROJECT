@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HORSES.View.Entrance"
         mc:Ignorable="d"
-        Title="Главное окно" Height="470" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Главное окно" Height="480" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid Loaded="Grid_Loaded"> 
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
     </Grid>

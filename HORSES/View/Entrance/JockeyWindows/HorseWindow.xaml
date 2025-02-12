@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Лошади" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Лошади" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
     <Window.Resources>
         <Style TargetType="DataGrid" x:Key="CustomDataGridStyle">
