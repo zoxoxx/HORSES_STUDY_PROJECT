@@ -41,7 +41,7 @@ namespace HORSES.View.Entrance.JudgeWindows
             this.Close();
         }
 
-        private async void Close_Click(object sender, RoutedEventArgs e)
+        private void Close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
@@ -54,9 +54,9 @@ namespace HORSES.View.Entrance.JudgeWindows
                 return;
             }
             disqual = true;
-            Participant? currentParticipant = App.db.Participants
+            Participant? currentParticipant = await App.db.Participants
                 .Where(p => p.UserId == Convert.ToInt32(JockeySelectionComboBox.SelectedValue.ToString()))
-                .FirstOrDefault();
+                .FirstOrDefaultAsync();
             if (currentParticipant is null)
             {
                 MessageBox.Show("Пользователь отсутствует в системе!");

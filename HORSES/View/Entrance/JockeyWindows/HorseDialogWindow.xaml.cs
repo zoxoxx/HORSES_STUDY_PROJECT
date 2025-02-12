@@ -22,8 +22,8 @@ namespace HORSES.View.Entrance.JockeyWindows
     /// </summary>
     public partial class HorseDialogWindow : Window
     {
-        Horse currentHorse;
-        ObservableCollection<Gender> genders; 
+        Horse? currentHorse;
+        ObservableCollection<Gender>? genders; 
         string mode;
         public enum Mode
         {
@@ -62,12 +62,15 @@ namespace HORSES.View.Entrance.JockeyWindows
                     DateOnly.FromDateTime(BIRTHDAY_DP.SelectedDate.GetValueOrDefault()), HorseNameTextBox.Text,
                     Convert.ToInt32(PLACE_BIRTH_CMB.SelectedValue.ToString()));
 
-                App.db.Horses.Add(newHorse);
-                App.db.SaveChanges();
+                await App.db.Horses.AddAsync(newHorse);
+                await App.db.SaveChangesAsync();
                 MessageBox.Show("Новая лошадь успешно добавлена!!!");
                 this.Close();
                 return;
             }
+
+            if (currentHorse is null)
+                return;
 
             currentHorse.Name = HorseNameTextBox.Text;
             currentHorse.PlaceBirthId = Convert.ToInt32(PLACE_BIRTH_CMB.SelectedValue.ToString());
@@ -78,7 +81,7 @@ namespace HORSES.View.Entrance.JockeyWindows
             currentHorse.TypId = Convert.ToInt32(HorseTypeComboBox.SelectedValue.ToString());
 
             App.db.Horses.Update(currentHorse);
-            App.db.SaveChanges();
+            await App.db.SaveChangesAsync();
             MessageBox.Show("Данные успешно обновлены!");
             this.Close();
         }
