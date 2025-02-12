@@ -77,5 +77,10 @@ namespace HORSES.View.Fan
             this.Hide();
             window.Show();
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

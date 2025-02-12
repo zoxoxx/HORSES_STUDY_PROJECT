@@ -16,7 +16,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Image Source="..\..\Resources\FanIcon.png" Height="150" Margin="0,0,0,10" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                <Image Source="\Resources\FanIcon.png" Height="150" Margin="0,0,0,10" VerticalAlignment="Top" HorizontalAlignment="Center"/>
 
                 <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Button Width="350" Height="40" Margin="5" Name="BTN_COMPETITION_INFO" Click="BTN_COMPETITION_INFO_Click" Background="#FF6699FF" Foreground="White" FontWeight="Bold">

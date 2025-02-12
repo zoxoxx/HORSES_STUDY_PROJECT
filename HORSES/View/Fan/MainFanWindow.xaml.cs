@@ -34,29 +34,25 @@ namespace HORSES.View.Fan
         private async void BTN_COMPETITION_INFO_Click(object sender, RoutedEventArgs e)
         {
             CompetitionAndRacesWindow window = new CompetitionAndRacesWindow();
-            this.Close();
-            window.Show();
+            window.ShowDialog();
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             CompetitionAndRacesWindow window = new CompetitionAndRacesWindow(true);
-            this.Close();
-            window.Show();
+            window.ShowDialog();
         }
 
         private async void BTN_DONATION_Click(object sender, RoutedEventArgs e)
         {
             DonationWindow window = new DonationWindow();
-            this.Close();
-            window.Show();
+            window.ShowDialog();
         }
 
         private async void BTN_RESULT_Click(object sender, RoutedEventArgs e)
         {
             CompetitionAndRacesWindow window = new CompetitionAndRacesWindow(true);
-            this.Close();
-            window.Show();
+            window.ShowDialog();
         }
     }
 }
