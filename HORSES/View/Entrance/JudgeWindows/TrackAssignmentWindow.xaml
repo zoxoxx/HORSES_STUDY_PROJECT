@@ -6,7 +6,7 @@
         xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:HORSES.View.Entrance.JudgeWindows"
         mc:Ignorable="d"
-        Title="Назначение дорожки" Height="500" Width="600"
+        Title="Назначение дорожки" Height="550" Width="600"
         Background="#F0F4F8" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style TargetType="Button">

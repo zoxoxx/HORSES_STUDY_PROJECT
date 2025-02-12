@@ -26,4 +26,5 @@ public partial class Participant
     public virtual UserI? User { get; set; }
 
     public virtual ICollection<Violation> Violations { get; set; } = new List<Violation>();
+
 }
