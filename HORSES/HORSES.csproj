@@ -10,6 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\FanIcon.png" />
+    <None Remove="Resources\Horses.jpg" />
+    <None Remove="Resources\JockeyIcon.png" />
+    <None Remove="Resources\JudgeIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Resources\transparent-horse-animal-sports-jockey.ico" />
   </ItemGroup>
 
@@ -26,6 +33,13 @@
     </PackageReference>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
     <PackageReference Include="WpfSnowfall" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\FanIcon.png" />
+    <Resource Include="Resources\Horses.jpg" />
+    <Resource Include="Resources\JockeyIcon.png" />
+    <Resource Include="Resources\JudgeIcon.png" />
   </ItemGroup>
 
 </Project>
