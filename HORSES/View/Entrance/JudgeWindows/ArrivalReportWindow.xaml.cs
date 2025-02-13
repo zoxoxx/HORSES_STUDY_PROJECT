@@ -11,14 +11,12 @@ namespace HORSES.View.Entrance.JudgeWindows
 {
     public partial class ArrivalReportWindow : Window
     {
-        private readonly HorseCompetitionsContext _context; 
-
         public ArrivalReportWindow()
         {
             InitializeComponent();
         }
 
-        private void Save_Click(object sender, RoutedEventArgs e)
+        private async void Save_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
@@ -32,6 +30,8 @@ namespace HORSES.View.Entrance.JudgeWindows
                 string filePath = saveFileDialog.FileName;
 
                 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+                var oneMonthAgo = DateTime.Now.AddMonths(-1);
+                int numberMonth = oneMonthAgo.Month;
 
                 using (ExcelPackage excel = new ExcelPackage())
                 {
@@ -43,16 +43,16 @@ namespace HORSES.View.Entrance.JudgeWindows
                     worksheet.Cells[1, 4].Value = "Время";
                     worksheet.Cells[1, 1, 1, 4].Style.Font.Bold = true;
 
-                    var checkInResults = _context.CheckInResults
+                    var checkInResults = App.db.CheckInResults
                         .Include(c => c.Participant) 
-                        .Where(c => c.CheckInId != null) 
+                        .Where(c => c.CheckInId != null && c.CheckIn.DateStart.Value.Month >= numberMonth) 
                         .ToList();
 
                     int row = 2;
                     foreach (var result in checkInResults)
                     {
                         worksheet.Cells[row, 1].Value = DateTime.Now.ToString("dd.MM.yyyy");
-                        worksheet.Cells[row, 2].Value = result.Participant; 
+                        worksheet.Cells[row, 2].Value = result.Participant.User.Phyo; 
                         worksheet.Cells[row, 3].Value = result.Result ?? 0;
                         worksheet.Cells[row, 4].Value = result.TimeEnd?.ToString("HH:mm:ss");
 
@@ -61,8 +61,9 @@ namespace HORSES.View.Entrance.JudgeWindows
 
                     File.WriteAllBytes(filePath, excel.GetAsByteArray());
                 }
-
+                numberMonth = numberMonth + 2;
                 MessageBox.Show($"Файл успешно сохранён!\nМестоположение: {filePath}", "Сохранение отчёта", MessageBoxButton.OK, MessageBoxImage.Information);
+                await App.db.CheckInResults.Where(c => c.CheckIn.DateStart.Value.Month >= numberMonth).ExecuteDeleteAsync();
                 this.Close();
             }
         }
