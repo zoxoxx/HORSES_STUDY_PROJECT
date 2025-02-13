@@ -22,6 +22,7 @@ namespace HORSES.View.Entrance
     /// </summary>
     public partial class Autorize : Window
     {
+        private bool isPasswordVisible = false;
         public Autorize()
         {
             InitializeComponent();
@@ -29,13 +30,13 @@ namespace HORSES.View.Entrance
 
         private async void BTN_VHOD_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TB_LOGIN.Text) || string.IsNullOrWhiteSpace(TB_PASSWORD.Text))
+            if (string.IsNullOrWhiteSpace(TB_LOGIN.Text) || string.IsNullOrWhiteSpace(PB_PASSWORD.Password))
             {
                 MessageBox.Show("Заполните данные для авторизации!", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            UserI? user = await AutorizeController.Autorize(TB_LOGIN.Text, TB_PASSWORD.Text);
+            UserI? user = await AutorizeController.Autorize(TB_LOGIN.Text, PB_PASSWORD.Password);
             if (user == null)
             {
                 MessageBox.Show("Пользователь отсутствует в системе.", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -60,6 +61,24 @@ namespace HORSES.View.Entrance
             MainWindow window = new MainWindow();
             this.Close();
             window.Show();
+        }
+
+        private void BTN_SHOW_PSWD_Click(object sender, RoutedEventArgs e)
+        {
+            if (isPasswordVisible)
+            {
+                PB_PASSWORD.Visibility = Visibility.Visible;
+                TB_PASSWORD_VISIBLE.Visibility = Visibility.Collapsed;
+                PB_PASSWORD.Password = TB_PASSWORD_VISIBLE.Text;
+            }
+            else
+            {
+                TB_PASSWORD_VISIBLE.Text = PB_PASSWORD.Password;
+                PB_PASSWORD.Visibility = Visibility.Collapsed;
+                TB_PASSWORD_VISIBLE.Visibility = Visibility.Visible;
+            }
+
+            isPasswordVisible = !isPasswordVisible;
         }
     }
 }
