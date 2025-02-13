@@ -31,15 +31,49 @@ namespace HORSES.View.Entrance.JudgeWindows
 
         private async void Save_Click(object sender, RoutedEventArgs e)
         {
-            if(!disqual)
+            if (!disqual)
             {
                 MessageBox.Show("Ни один жокей не был дисквалифицирован!");
                 return;
             }
+
+            if (JockeySelectionComboBox.SelectedValue is null)
+            {
+                MessageBox.Show("Сначала необходимо выбрать жокея!");
+                return;
+            }
+
+            Participant? currentParticipant = await App.db.Participants
+                .Where(p => p.UserId == Convert.ToInt32(JockeySelectionComboBox.SelectedValue.ToString()))
+                .FirstOrDefaultAsync();
+
+            if (currentParticipant is null)
+            {
+                MessageBox.Show("Пользователь отсутствует в системе!");
+                return;
+            }
+
+            string violationText = TrainerIdTextBox.Text.Trim();
+            if (string.IsNullOrEmpty(violationText))
+            {
+                MessageBox.Show("Введите описание нарушения!");
+                return;
+            }
+
+            Violation newViolation = new Violation
+            {
+                ParticipantId = currentParticipant.Id,
+                Violations = violationText
+            };
+
+            await App.db.Violations.AddAsync(newViolation);
+            currentParticipant.Disqualification = true;
             await App.db.SaveChangesAsync();
+
             MessageBox.Show("Успешно сохранено!");
             this.Close();
         }
+
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
