@@ -48,7 +48,19 @@ namespace HORSES.View.Entrance.JudgeWindows
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Данные сохранены", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
 
+            ClearFields();
+
+            this.Close();
+        }
+
+        private void ClearFields()
+        {
+            JockeyComboBox.SelectedIndex = -1;
+            HorseTypeComboBox.SelectedIndex = -1;
+            EquipmentColorComboBox.SelectedIndex = -1;
+            FinishTimePicker.SelectedDate = null;
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
