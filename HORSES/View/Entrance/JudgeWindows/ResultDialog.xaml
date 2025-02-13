@@ -70,7 +70,7 @@
                 <material:PackIcon Kind="FlagCheckered" Width="24" Height="24" Foreground="#1E88E5" VerticalAlignment="Center"/>
                 <TextBlock Text="Финишное время:" FontSize="16" FontWeight="Medium" Foreground="#616161" VerticalAlignment="Center" Margin="10,0"/>
             </StackPanel>
-            <DatePicker x:Name="FinishTimePicker" Margin="0,5" Padding="10" BorderBrush="#B0BEC5" BorderThickness="1" FontSize="14" VerticalAlignment="Center"/>
+            <DatePicker x:Name="FinishTimePicker" Margin="0,5" Padding="10" BorderBrush="#007ACC" BorderThickness="2" FontSize="14" VerticalAlignment="Center"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,20">
