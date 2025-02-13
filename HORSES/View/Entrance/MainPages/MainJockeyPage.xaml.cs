@@ -41,7 +41,7 @@ namespace HORSES.View.Entrance.MainPages
 
         private void Registration_Click(object sender, RoutedEventArgs e)
         {
-            RegistrationWindow window = new RegistrationWindow();
+            RegistrationWindow window = new RegistrationWindow(MainUserWindow.CurrentUser);
             window.ShowDialog();
         }
 

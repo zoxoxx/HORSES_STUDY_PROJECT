@@ -29,7 +29,7 @@
             <Setter Property="BorderBrush" Value="#1565C0"/>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid Loaded="Grid_Loaded">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -50,13 +50,13 @@
                 <material:PackIcon Kind="GenderMaleFemale" Width="24" Height="24" Foreground="#1E88E5" VerticalAlignment="Center"/>
                 <TextBlock Text="Лошадь:" FontSize="16" FontWeight="Medium" Foreground="#616161" VerticalAlignment="Center" Margin="10,0"/>
             </StackPanel>
-            <ComboBox x:Name="HorseComboBox" Height="40" Margin="0,5" Padding="10" BorderBrush="#B0BEC5" BorderThickness="1" FontSize="14" VerticalAlignment="Center"/>
+            <ComboBox x:Name="HorseComboBox" Height="40" Margin="0,5" Padding="10" BorderBrush="#B0BEC5" BorderThickness="1" FontSize="14" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="HorseComboBox_SelectionChanged" DropDownOpened="HorseComboBox_DropDownOpened"/>
 
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,20,0,5">
                 <material:PackIcon Kind="FlagCheckered" Width="24" Height="24" Foreground="#1E88E5" VerticalAlignment="Center"/>
                 <TextBlock Text="Состязание и заезд" FontSize="16" FontWeight="Medium" Foreground="#616161" VerticalAlignment="Center" Margin="10,0"/>
             </StackPanel>
-            <ComboBox x:Name="CompetitionRaceComboBox" Height="40" Margin="0,5" Padding="10" BorderBrush="#B0BEC5" BorderThickness="1" FontSize="14" VerticalAlignment="Center"/>
+            <ComboBox x:Name="RACE_CMB" Height="40" Margin="0,5" Padding="10" BorderBrush="#B0BEC5" BorderThickness="1" FontSize="14" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="RACE_CMB_SelectionChanged"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,20">
