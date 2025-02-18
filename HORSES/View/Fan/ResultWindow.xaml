@@ -92,6 +92,8 @@
                 <DataGridTextColumn Header="Порода" Width="*" Binding="{Binding Poroda}"/>
                 <DataGridTextColumn Header="Цвет экипировки" Width="*" Binding="{Binding ColorClothes}"/>
                 <DataGridTextColumn Header="Время финиша" Width="*" Binding="{Binding TimeFinish }"/>
+                <DataGridTextColumn Header="." Width="-1" Binding="{Binding ID }" />
+                <DataGridTextColumn Header="." Width="-1" Binding="{Binding IDR }" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

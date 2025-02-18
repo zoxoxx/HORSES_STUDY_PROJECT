@@ -60,18 +60,22 @@ namespace HORSES.View.Entrance.JockeyWindows
             var participants = await App.db.Participants.ToListAsync();
 
             var raceWithParticipants = from race in checkIns
-                                       join link in compAndCheckIns
-                                       on race.Id equals link.CheckInId into raceLinks
-                                       from raceLink in raceLinks.DefaultIfEmpty()
-                                       join participant in participants
-                                       on raceLink.ParticipantId equals participant.Id into raceParticipants
-                                       from raceParticipant in raceParticipants.DefaultIfEmpty()
-                                       select new { race, raceParticipant };
+                           join link in compAndCheckIns
+                           on race.Id equals link.CheckInId into raceLinks
+                           from raceLink in raceLinks.DefaultIfEmpty()
+                           join participant in participants
+                           on raceLink?.ParticipantId equals participant.Id into raceParticipants
+                           from raceParticipant in raceParticipants.DefaultIfEmpty()
+                           select new 
+                           { 
+                               Race = race,
+                               RaceParticipant = raceParticipant ?? new Participant() // или любое значение по умолчанию, если нужно
+                           };
 
             var racesWithoutCurrentUser = raceWithParticipants
-                .GroupBy(rwp => rwp.race.Id)
-                .Where(group => !group.Any(r => r.raceParticipant != null && r.raceParticipant.UserId == currentUser.Id))
-                .Select(group => group.First().race)
+                .GroupBy(rwp => rwp.Race.Id)
+                .Where(group => !group.Any(r => r.RaceParticipant != null && r.RaceParticipant.UserId == currentUser.Id))
+                .Select(group => group.First().Race)
                 .ToList();
 
             RACE_CMB.ItemsSource = new ObservableCollection<CheckIn>(racesWithoutCurrentUser);
@@ -102,11 +106,22 @@ namespace HORSES.View.Entrance.JockeyWindows
             var horses = await App.db.Horses.ToListAsync();
             var participants = await App.db.Participants.ToListAsync();
             var links = await App.db.CompetitionAndCheckIns.ToListAsync();
+            CheckIn currentRace = App.db.CheckIns.FirstOrDefault(r => r.Id == Convert.ToInt32(RACE_CMB.SelectedValue.ToString()));
+            string[] typs = currentRace.TypeHorseIdCollection.Split(",");
+            List<int>? currentTyps = new List<int>();
+            int currentAge = Convert.ToInt32(currentRace.Age);
+            for(int i = 0; i < typs.Length; i++)
+            {
+                currentTyps.Add(Convert.ToInt32(typs[i]));
+            }
+
+
 
             var unusedHorses = horses
                 .Where(horse => !participants
                     .Any(participant => participant.HorseId == horse.Id && links
-                        .Any(link => link.ParticipantId == participant.Id && link.CheckInId == selectedRaceId)))
+                        .Any(link => link.ParticipantId == participant.Id && link.CheckInId == selectedRaceId)) && currentTyps.Contains(horse.TypId ?? 0)
+                        && horse.Birthday.Value.Year >= currentAge)
                 .ToList();
 
             HorseComboBox.ItemsSource = new ObservableCollection<Horse>(unusedHorses);

@@ -1,6 +1,7 @@
 ﻿using HORSES.Models;
 using HORSES.View.Entrance;
 using HORSES.View.Entrance.JockeyWindows;
+using HORSES.View.Entrance.JudgeWindows;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -71,7 +72,8 @@ namespace HORSES.View.Fan
                 Poroda = finalCombo.typHorse.Name,
                 ColorClothes = finalCombo.userCombo.horseCombo.clothesCombo.clothes.HelmetColor,
                 TimeFinish = finalCombo.userCombo.horseCombo.clothesCombo.partResCombo.result.TimeEnd,
-
+                ID = finalCombo.userCombo.horseCombo.clothesCombo.partResCombo.result.CheckInId.ToString(),
+                IDR = finalCombo.userCombo.horseCombo.clothesCombo.partResCombo.result.Id.ToString()
             })
             .ToListAsync();
 
@@ -79,16 +81,46 @@ namespace HORSES.View.Fan
             return new ObservableCollection<object>(resultList);
         }
 
-        private void Add_Click(object sender, RoutedEventArgs e)
+        private async void Add_Click(object sender, RoutedEventArgs e)
         {
-            //HorseDialogWindow createWindow = new HorseDialogWindow(HorseDialogWindow.Mode.Create);
-            //createWindow.ShowDialog();
+            if (DG_RESULT.SelectedItem is null)
+            {
+                MessageBox.Show("Сначала необходимо выбрать строку!");
+                return;
+            }
+            var selectedRow = DG_RESULT.SelectedItem;
+            string cellValue;
+
+            DataGridColumn column = DG_RESULT.Columns[5];
+            DG_RESULT.CurrentColumn = column;
+            if (column.GetCellContent(selectedRow) is TextBlock cellContent)
+            {
+                CheckIn? currentRace = await App.db.CheckIns.FirstOrDefaultAsync(h => h.Id == Convert.ToInt32(cellContent));
+                ResultDialog window = new ResultDialog(ResultDialog.Mode.Create, currentRace);
+                window.ShowDialog();
+            }
+            DG_RESULT.ItemsSource = await CurrentResults();
         }
 
-        private void Edit_Click(object sender, RoutedEventArgs e)
+        private async void Edit_Click(object sender, RoutedEventArgs e)
         {
-            //HorseDialogWindow editWindow = new HorseDialogWindow(HorseDialogWindow.Mode.Edit);
-            //editWindow.ShowDialog();
+            if (DG_RESULT.SelectedItem is null)
+            {
+                MessageBox.Show("Сначала необходимо выбрать строку!");
+                return;
+            }
+            var selectedRow = DG_RESULT.SelectedItem;
+
+            DataGridColumn column = DG_RESULT.Columns[6];
+            DG_RESULT.CurrentColumn = column;
+            if (column.GetCellContent(selectedRow) is TextBlock cellContent)
+            {
+                CheckInResult? currentResult = await App.db.CheckInResults.FirstOrDefaultAsync(h => h.Id == Convert.ToInt32(cellContent.Text));
+                ResultDialog window = new ResultDialog(ResultDialog.Mode.Edit, null, currentResult);
+                window.ShowDialog();
+            }
+            DG_RESULT.ItemsSource = await CurrentResults();
+
         }
     }
 }

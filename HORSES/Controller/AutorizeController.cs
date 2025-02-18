@@ -9,7 +9,7 @@ using System.Windows.Media.Animation;
 
 namespace HORSES.Controller
 {
-    class AutorizeController
+    public static class AutorizeController
     {
         public static async Task<UserI> Autorize(string login, string password)
         {

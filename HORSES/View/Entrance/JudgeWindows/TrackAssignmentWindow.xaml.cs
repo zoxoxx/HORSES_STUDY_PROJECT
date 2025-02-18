@@ -125,7 +125,7 @@ namespace HORSES.View.Entrance.JudgeWindows
                                   join checkIn in App.db.CheckIns on link.CheckInId equals checkIn.Id
                                   join track in App.db.Tracks on link.TrackId equals track.Id into trackGroup
                                   from track in trackGroup.DefaultIfEmpty()
-                                  where track == null && link.ParticipantId == selectedJockeyId
+                                  where track == null && link.Participant.UserId == selectedJockeyId
                                   select checkIn).ToListAsync();
 
             RaceComboBox.ItemsSource = new ObservableCollection<CheckIn>(checkIns);

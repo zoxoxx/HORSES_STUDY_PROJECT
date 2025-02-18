@@ -52,7 +52,7 @@ namespace HORSES.View.Entrance.JudgeWindows
                     foreach (var result in checkInResults)
                     {
                         worksheet.Cells[row, 1].Value = DateTime.Now.ToString("dd.MM.yyyy");
-                        worksheet.Cells[row, 2].Value = result.Participant.User.Phyo; 
+                        worksheet.Cells[row, 2].Value = result?.Participant?.User?.Phyo ?? "Пусто";
                         worksheet.Cells[row, 3].Value = result.Result ?? 0;
                         worksheet.Cells[row, 4].Value = result.TimeEnd?.ToString("HH:mm:ss");
 

@@ -80,7 +80,7 @@
                 <DataGridTextColumn Header="День рождения" Width="*" Binding="{Binding Birthday}"/>
                 <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding Name}"/>
                 <DataGridTextColumn Header="Место рождения" Width="*" Binding="{Binding Place}"/>
-                <DataGridTextColumn Header="ID_HORSE" Width="*" Binding="{Binding ID}" />
+                <DataGridTextColumn Header="Номер лошади" Width="*" Binding="{Binding ID}"/>
             </DataGrid.Columns>
         </DataGrid>
 
